@@ -58,7 +58,9 @@ aluminium = 0</code>
   </views>
   <instances>
     <instance objName="obj_main" x="320" y="256" name="inst_05023F1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_module_farming" x="64" y="64" name="inst_AE49157E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_module_farming" x="64" y="52" name="inst_AE49157E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_module_blank_floor" x="64" y="52" name="inst_A5352E2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_module_blank_bottom" x="64" y="52" name="inst_E822D2E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

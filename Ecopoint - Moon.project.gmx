@@ -6,9 +6,9 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite0</sprite>
-    <sprite>sprites\spr_blankroom</sprite>
-    <sprite>sprites\spr_roomdefault</sprite>
+    <sprite>sprites\spr_blankroom_top</sprite>
+    <sprite>sprites\spr_blankroom_floor</sprite>
+    <sprite>sprites\spr_blankroom_bottom</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -20,8 +20,10 @@
     <object>objects\obj_module_farming</object>
     <object>objects\obj_module_oxygentank</object>
     <object>objects\obj_module_oxygenrecovery</object>
+    <object>objects\obj_module_blank_bottom</object>
     <object>objects\obj_main</object>
-    <object>objects\obj_module_default</object>
+    <object>objects\obj_module_blank_top</object>
+    <object>objects\obj_module_blank_floor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
