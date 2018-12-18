@@ -5,12 +5,21 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\spr_blankroom</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\main_start.gml</script>
+    <script>scripts\main.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_module_farming</object>
-    <object>objects\object1</object>
+    <object>objects\obj_module_oxygentank</object>
+    <object>objects\obj_module_oxygenrecovery</object>
+    <object>objects\obj_main</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
