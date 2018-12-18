@@ -9,6 +9,7 @@
     <sprite>sprites\spr_blankroom_top</sprite>
     <sprite>sprites\spr_blankroom_floor</sprite>
     <sprite>sprites\spr_blankroom_bottom</sprite>
+    <sprite>sprites\spr_farm</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -17,13 +18,11 @@
     <script>scripts\main.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_module_farming</object>
-    <object>objects\obj_module_oxygentank</object>
-    <object>objects\obj_module_oxygenrecovery</object>
     <object>objects\obj_module_blank_bottom</object>
     <object>objects\obj_main</object>
     <object>objects\obj_module_blank_top</object>
     <object>objects\obj_module_blank_floor</object>
+    <object>objects\obj_module_farming</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
