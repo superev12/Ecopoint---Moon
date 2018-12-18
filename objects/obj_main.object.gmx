@@ -111,11 +111,12 @@ alarm[0] = global.alarmspeed;
             <kind>1</kind>
             <string>if (mouse_check_button_pressed(mb_left) == true)
 {
-    show_debug_message(string(instance_place(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming)))
-    if instance_place(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming) != -4
+    //show_debug_message(string(instance_position(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming)))
+    //if  (instance_position(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming) != -4)
+    if (!instance_position(mouse_x, mouse_y, obj_module_default))
     {   
-        show_debug_message("Placing room at: " + string(floor(mouse_x/64)*64) + ", " + string(floor(mouse_y/64)*64))
-        instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming)
+        show_debug_message("Placing room at: " + string(floor(mouse_x/64)*64) + ", " + string(floor(mouse_y/64)*64));
+        instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming);
     }
 }
 </string>

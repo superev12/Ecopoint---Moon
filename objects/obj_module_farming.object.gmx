@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = global.alarmspeed;
+instance_create(x,y,obj_module_default);
 </string>
           </argument>
         </arguments>
