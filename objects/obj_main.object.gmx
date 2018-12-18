@@ -26,17 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>global.alarmspeed = room_speed * 5;
-
-population = 4;
-water = 5;
-oxygen = 5;
-food = 0;
-electricity = 0;
-silicon = 0;
-iron = 0;
+population = 4
+water = 5
+oxygen = 5
+food = 0
+electricity = 0
+silicon = 0
+iron = 0
 aluminium = 0;
-
-alarm[0] =  global.alarmspeed;
+alarm[0] =  global.alarmspeed
 </string>
           </argument>
         </arguments>
@@ -111,7 +109,16 @@ alarm[0] = global.alarmspeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if (mouse_check_button_pressed(mb_left) == true)
+{
+    show_debug_message(string(instance_place(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming)))
+    if instance_place(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming) != -4
+    {   
+        show_debug_message("Placing room at: " + string(floor(mouse_x/64)*64) + ", " + string(floor(mouse_y/64)*64))
+        instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming)
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>
