@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>depth = -y - 6
+</string>
           </argument>
         </arguments>
       </action>

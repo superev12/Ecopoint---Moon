@@ -57,10 +57,10 @@ alarm[0] =  global.alarmspeed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var water_used = instance_number(obj_module_farming) + population;
+            <string>var water_used = instance_number(obj_module_farm) + population;
 var water_produced = 4;
 var food_used = population;
-var food_produced = instance_number(obj_module_farming) * 10;
+var food_produced = instance_number(obj_module_farm) * 10;
 show_debug_message("Food used: " + string(food_used))
 show_debug_message("Food produced: " + string(food_produced))
 
@@ -120,6 +120,14 @@ alarm[0] = global.alarmspeed;
                 show_debug_message("Placing room at: " + string(floor(mouse_x/64)*64) + ", " + string(floor(mouse_y/64)*64));
                 instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_floor);
             }
+    }
+}
+
+if (keyboard_check_pressed(ord("f")))
+{
+    if (instance_position(mouse_x, mouse_y, obj_module_blank_floor))
+    {
+        instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_farm);
     }
 }
 </string>

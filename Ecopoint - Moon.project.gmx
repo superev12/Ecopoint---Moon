@@ -10,6 +10,7 @@
     <sprite>sprites\spr_blankroom_floor</sprite>
     <sprite>sprites\spr_blankroom_bottom</sprite>
     <sprite>sprites\spr_farm</sprite>
+    <sprite>sprites\spr_oxygen_tank</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -22,7 +23,8 @@
     <object>objects\obj_main</object>
     <object>objects\obj_module_blank_top</object>
     <object>objects\obj_module_blank_floor</object>
-    <object>objects\obj_module_farming</object>
+    <object>objects\obj_module_farm</object>
+    <object>objects\obj_module_oxygen_tank</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
