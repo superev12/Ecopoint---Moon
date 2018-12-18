@@ -113,13 +113,13 @@ alarm[0] = global.alarmspeed;
 {
     //show_debug_message(string(instance_position(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming)))
     //if  (instance_position(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming) != -4)
-    if (!instance_position(mouse_x, mouse_y, obj_module_default))
+    if (!instance_position(mouse_x, mouse_y, obj_module_blank_floor))
     {   
-        show_debug_message("Placing room at: " + string(floor(mouse_x/64)*64) + ", " + string(floor(mouse_y/64)*64));
-        instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_floor);
-        instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_bottom);
-        instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_top);
-        
+            if instance_position(mouse_x-64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x+64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x, mouse_y+64, obj_module_blank_floor) or instance_position(mouse_x, mouse_y-64, obj_module_blank_floor)
+            {
+                show_debug_message("Placing room at: " + string(floor(mouse_x/64)*64) + ", " + string(floor(mouse_y/64)*64));
+                instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_floor);
+            }
     }
 }
 </string>
