@@ -30,6 +30,9 @@
     <object>objects\obj_module_farm</object>
     <object>objects\obj_module_oxygen_tank</object>
     <object>objects\obj_door_up</object>
+    <object>objects\obj_door_right</object>
+    <object>objects\obj_door_down</object>
+    <object>objects\obj_door_left</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
