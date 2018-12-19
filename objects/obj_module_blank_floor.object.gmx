@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>depth = -y
-instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_bottom);
-instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_top);
+instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_module_blank_bottom);
+instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_module_blank_top);
+//if instance_position/
 </string>
           </argument>
         </arguments>
