@@ -32,26 +32,45 @@ instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_module_blank_top);
 //  Up
 if instance_position(x+32, y-32, obj_module_blank_floor)
 {
-    show_debug_message("Found room up")
+    //show_debug_message("Found room up")
     instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_door_up); 
 }
+else
+{
+    instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_wall_up);
+}
+
 // Down
 if instance_position(x+32, y+96, obj_module_blank_floor)
 {
-    show_debug_message("Found room down")
+    //show_debug_message("Found room down")
     instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_door_down); 
 }
+else
+{
+    instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_wall_down);
+}
+
 //  Left
 if instance_position(x-32, y+32, obj_module_blank_floor)
 {
-    show_debug_message("Found room left")
+    //show_debug_message("Found room left")
     instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_door_left); 
 }
+else
+{
+    instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_wall_left);
+}
+
 //  Right
 if instance_position(x+96, y+32, obj_module_blank_floor)
 {
-    show_debug_message("Found room right")
+    //show_debug_message("Found room right")
     instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_door_right); 
+}
+else
+{
+    instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_wall_right);
 }
 
 
