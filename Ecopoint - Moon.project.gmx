@@ -6,19 +6,28 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_blankroom_top</sprite>
-    <sprite>sprites\spr_blankroom_floor</sprite>
-    <sprite>sprites\spr_blankroom_bottom</sprite>
-    <sprite>sprites\spr_farm</sprite>
-    <sprite>sprites\spr_oxygen_tank</sprite>
-    <sprite>sprites\spr_door_left</sprite>
-    <sprite>sprites\spr_wall_left</sprite>
-    <sprite>sprites\spr_door_right</sprite>
-    <sprite>sprites\spr_door_down</sprite>
-    <sprite>sprites\spr_wall_down</sprite>
-    <sprite>sprites\spr_wall_right</sprite>
-    <sprite>sprites\spr_wall_up</sprite>
-    <sprite>sprites\spr_door_up</sprite>
+    <sprites name="Modules">
+      <sprite>sprites\spr_blankroom_top</sprite>
+      <sprite>sprites\spr_blankroom_floor</sprite>
+      <sprite>sprites\spr_farm</sprite>
+      <sprite>sprites\spr_oxygen_tank</sprite>
+      <sprite>sprites\spr_blankroom_bottom</sprite>
+    </sprites>
+    <sprites name="Walls">
+      <sprite>sprites\spr_wall_right</sprite>
+      <sprite>sprites\spr_wall_left</sprite>
+      <sprite>sprites\spr_wall_down</sprite>
+      <sprite>sprites\spr_wall_up</sprite>
+    </sprites>
+    <sprites name="Doors">
+      <sprite>sprites\spr_door_down</sprite>
+      <sprite>sprites\spr_door_right</sprite>
+      <sprite>sprites\spr_door_left</sprite>
+      <sprite>sprites\spr_door_up</sprite>
+    </sprites>
+    <sprites name="UI">
+      <sprite>sprites\spr_foodchoice</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,12 +36,7 @@
     <script>scripts\main.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_module_blank_bottom</object>
     <object>objects\obj_main</object>
-    <object>objects\obj_module_blank_top</object>
-    <object>objects\obj_module_blank_floor</object>
-    <object>objects\obj_module_farm</object>
-    <object>objects\obj_module_oxygen_tank</object>
     <objects name="Walls">
       <object>objects\obj_wall_up</object>
       <object>objects\obj_wall_right</object>
@@ -45,6 +49,14 @@
       <object>objects\obj_door_left</object>
       <object>objects\obj_door_down</object>
     </objects>
+    <objects name="Modules">
+      <object>objects\obj_module_oxygen_tank</object>
+      <object>objects\obj_module_farm</object>
+      <object>objects\obj_module_blank_floor</object>
+      <object>objects\obj_module_blank_top</object>
+      <object>objects\obj_module_blank_bottom</object>
+    </objects>
+    <object>objects\obj_foodselect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
