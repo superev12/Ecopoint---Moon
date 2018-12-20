@@ -12,6 +12,7 @@
       <sprite>sprites\spr_farm</sprite>
       <sprite>sprites\spr_oxygen_tank</sprite>
       <sprite>sprites\spr_blankroom_bottom</sprite>
+      <sprite>sprites\spr_water_tank</sprite>
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_wall_right</sprite>
@@ -27,6 +28,7 @@
     </sprites>
     <sprites name="UI">
       <sprite>sprites\spr_foodchoice</sprite>
+      <sprite>sprites\spr_waterchoice</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -37,6 +39,8 @@
   </scripts>
   <objects name="objects">
     <object>objects\obj_main</object>
+    <object>objects\obj_foodselect</object>
+    <object>objects\obj_waterselect</object>
     <objects name="Walls">
       <object>objects\obj_wall_up</object>
       <object>objects\obj_wall_right</object>
@@ -55,8 +59,8 @@
       <object>objects\obj_module_blank_floor</object>
       <object>objects\obj_module_blank_top</object>
       <object>objects\obj_module_blank_bottom</object>
+      <object>objects\obj_module_water_tank</object>
     </objects>
-    <object>objects\obj_foodselect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
