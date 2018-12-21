@@ -35,6 +35,13 @@
       <sprite>sprites\spr_oxygentankchoice_selected</sprite>
       <sprite>sprites\spr_oxygentankchoice</sprite>
     </sprites>
+    <sprites name="Characters">
+      <sprite>sprites\spr_char1</sprite>
+      <sprite>sprites\spr_char2</sprite>
+      <sprite>sprites\spr_char3</sprite>
+      <sprite>sprites\spr_char4</sprite>
+      <sprite>sprites\spr_char5</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -68,6 +75,7 @@
       <object>objects\obj_module_blank_bottom</object>
       <object>objects\obj_module_water_tank</object>
     </objects>
+    <object>objects\obj_character</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>

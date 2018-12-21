@@ -26,16 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>global.alarmspeed = room_speed * 5; //Length of turns
-global.transparency = 0.3           //Degree of transparency for queued builds
-population = 4
-water = 5
-oxygen = 5
-food = 0
-electricity = 0
-silicon = 0
-iron = 0
+global.transparency = 0.3;           //Degree of transparency for queued builds
+population = 4;
+water = 5;
+oxygen = 5;
+food = 0;
+electricity = 0;
+silicon = 0;
+iron = 0;
 aluminium = 0;
-alarm[0] =  global.alarmspeed
+alarm[0] =  global.alarmspeed;
 </string>
           </argument>
         </arguments>
@@ -58,7 +58,8 @@ alarm[0] =  global.alarmspeed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var water_used = instance_number(obj_module_farm) + population;
+            <string>var population = instance_number(obj_character)
+var water_used = instance_number(obj_module_farm) + population;
 var water_produced = 4;
 var food_used = population;
 var food_produced = instance_number(obj_module_farm) * 10;
