@@ -133,7 +133,7 @@ turns_alive += 1;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -152,12 +152,13 @@ turns_alive += 1;
             <kind>1</kind>
             <string>if turns_alive &lt; 0
 {
-    image_alpha = 0.1;
+    image_alpha = global.transparency;
 }
 else
 {
     image_alpha = 1;
 }
+draw_self()
 </string>
           </argument>
         </arguments>
