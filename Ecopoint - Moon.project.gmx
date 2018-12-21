@@ -13,6 +13,7 @@
       <sprite>sprites\spr_oxygen_tank</sprite>
       <sprite>sprites\spr_blankroom_bottom</sprite>
       <sprite>sprites\spr_water_tank</sprite>
+      <sprite>sprites\spr_sleep</sprite>
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_wall_right</sprite>
@@ -27,8 +28,12 @@
       <sprite>sprites\spr_door_up</sprite>
     </sprites>
     <sprites name="UI">
+      <sprite>sprites\spr_foodchoice_selected</sprite>
       <sprite>sprites\spr_foodchoice</sprite>
+      <sprite>sprites\spr_waterchoice_selected</sprite>
       <sprite>sprites\spr_waterchoice</sprite>
+      <sprite>sprites\spr_oxygentankchoice_selected</sprite>
+      <sprite>sprites\spr_oxygentankchoice</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -41,6 +46,7 @@
     <object>objects\obj_main</object>
     <object>objects\obj_foodselect</object>
     <object>objects\obj_waterselect</object>
+    <object>objects\obj_oxygentankselect</object>
     <objects name="Walls">
       <object>objects\obj_wall_up</object>
       <object>objects\obj_wall_right</object>
@@ -55,6 +61,7 @@
     </objects>
     <objects name="Modules">
       <object>objects\obj_module_oxygen_tank</object>
+      <object>objects\obj_module_sleep</object>
       <object>objects\obj_module_farm</object>
       <object>objects\obj_module_blank_floor</object>
       <object>objects\obj_module_blank_top</object>

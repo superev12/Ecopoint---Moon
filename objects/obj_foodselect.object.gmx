@@ -58,18 +58,28 @@ state = false;
 
 */
 if (mouse_check_button_pressed(mb_left)){
-    if instance_position(mouse_x, mouse_y, obj_foodselect){
+    if instance_position(mouse_x, mouse_y, self){
         state = true;
-        show_debug_message("You can now choose a module for food");
+        //show_debug_message("You can now choose a module for food");
     } else if (state == true) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor)){
         state = false;
-        show_debug_message("No longer choosing food");
+        //show_debug_message("No longer choosing food");
     } else if (state == true) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor)) {
         if (instance_position(mouse_x, mouse_y, obj_module_blank_floor).turns_alive &gt; -1) {
             instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_farm);
         }
         state = true;   
     }
+}
+
+//Highlights icon based on selection
+if state == true
+{
+    sprite_index = spr_foodchoice_selected;
+}
+else
+{
+    sprite_index = spr_foodchoice;
 }
 </string>
           </argument>
