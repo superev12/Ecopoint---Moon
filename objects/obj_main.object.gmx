@@ -113,8 +113,6 @@ alarm[0] = global.alarmspeed;
 {
     show_debug_message("Clicked at (" + string(mouse_x) + ", " + string(mouse_y) + ")")
     show_debug_message("Found" + string(instance_position(mouse_x, mouse_y, obj_wall_left)))
-    //show_debug_message(string(instance_position(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming)))
-    //if  (instance_position(floor(mouse_x/64)*64, floor(mouse_y/64)*64, obj_module_farming) != -4)
     if (!instance_position(mouse_x, mouse_y, obj_module_blank_floor))
     {   
             if instance_position(mouse_x-64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x+64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x, mouse_y+64, obj_module_blank_floor) or instance_position(mouse_x, mouse_y-64, obj_module_blank_floor)
