@@ -128,7 +128,6 @@ else
             <kind>1</kind>
             <string>alarm[0] = global.alarmspeed;
 turns_alive += 1;
-show_debug_message("Turn")
 </string>
           </argument>
         </arguments>
