@@ -124,14 +124,40 @@ alarm[0] = global.alarmspeed;
             <kind>1</kind>
             <string>if (mouse_check_button_pressed(mb_left) == true)
 {
-    show_debug_message("Clicked at (" + string(mouse_x) + ", " + string(mouse_y) + ")")
-    show_debug_message("Found" + string(instance_position(mouse_x, mouse_y, obj_wall_left)))
-    if (!instance_position(mouse_x, mouse_y, obj_module_blank_floor))
-    {   
+    //show_debug_message("Clicked at (" + string(mouse_x) + ", " + string(mouse_y) + ")")
+    //show_debug_message("Found" + string(instance_position(mouse_x, mouse_y, obj_wall_left)))
+    
+    //Handles based on selected tool
+    if (global.tool_selected = tool_list.build)
+    {
+        if (!instance_position(mouse_x, mouse_y, obj_module_blank_floor))
+        {
             if instance_position(mouse_x-64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x+64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x, mouse_y+64, obj_module_blank_floor) or instance_position(mouse_x, mouse_y-64, obj_module_blank_floor)
             {
                 instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_floor);
             }
+        }
+        
+    }
+    else if (global.tool_selected = tool_list.food) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor))
+    {
+        if (instance_position(mouse_x, mouse_y, obj_module_blank_floor).turns_alive &gt; -1)  
+        {
+            instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_farm);
+        }
+        global.tool_selected = tool_list.food; 
+    }
+    else if (global.tool_selected == tool_list.water_tank) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor)) {
+        if (instance_position(mouse_x, mouse_y, obj_module_blank_floor).turns_alive &gt; -1) {
+            instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_water_tank);
+        }
+        global.tool_selected = tool_list.water_tank;  
+    }
+    else if (global.tool_selected == tool_list.oxygen_tank) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor)) {
+        if (instance_position(mouse_x, mouse_y, obj_module_blank_floor).turns_alive &gt; -1) {
+            instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_oxygen_tank);
+        }
+        global.tool_selected = tool_list.oxygen_tank;  
     }
 }
 </string>

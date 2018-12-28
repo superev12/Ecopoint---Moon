@@ -71,11 +71,6 @@ if (mouse_check_button_pressed(mb_left)){
     } else if (global.tool_selected == tool_list.water_tank) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor)){
         global.tool_selected = tool_list.empty;
         //show_debug_message("No longer choosing water");
-    } else if (global.tool_selected == tool_list.water_tank) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor)) {
-        if (instance_position(mouse_x, mouse_y, obj_module_blank_floor).turns_alive &gt; -1) {
-            instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_water_tank);
-        }
-        global.tool_selected = tool_list.water_tank;  
     }
 }
 
