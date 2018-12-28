@@ -42,6 +42,7 @@
       <sprite>sprites\spr_char4</sprite>
       <sprite>sprites\spr_char5</sprite>
     </sprites>
+    <sprite>sprites\spr_camera</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -50,6 +51,7 @@
     <script>scripts\main.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\obj_camera</object>
     <object>objects\obj_main</object>
     <object>objects\obj_foodselect</object>
     <object>objects\obj_waterselect</object>
@@ -74,6 +76,7 @@
       <object>objects\obj_module_blank_top</object>
       <object>objects\obj_module_blank_bottom</object>
       <object>objects\obj_module_water_tank</object>
+      <object>objects\obj_module_taken_floor</object>
     </objects>
     <object>objects\obj_character</object>
   </objects>
