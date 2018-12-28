@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>//Boolean to state whether or not the food option is selected
 state = false;
+x_gui = x;
+y_gui = y;
 </string>
           </argument>
         </arguments>
@@ -58,7 +60,8 @@ state = false;
 
 */
 if (mouse_check_button_pressed(mb_left)){
-    if instance_position(mouse_x, mouse_y, self){
+    if (device_mouse_x_to_gui(0) == median(x_gui, device_mouse_x_to_gui(0), x_gui+64) &amp;&amp; (device_mouse_y_to_gui(0) == median(y_gui, device_mouse_y_to_gui(0), y_gui+64)))
+    {
         state = true;
         //show_debug_message("You can now choose a module for food");
     } else if (state == true) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor)){
