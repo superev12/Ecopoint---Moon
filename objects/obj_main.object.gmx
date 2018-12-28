@@ -28,6 +28,14 @@
             <string>global.alarmspeed = room_speed * 5; //Length of turns
 global.transparency = 0.3;           //Degree of transparency for queued builds
 global.cameraspeed = 5;             //The speed the camera scrolls
+enum tool_list  {
+    empty,
+    build,
+    food,
+    water_tank,
+    oxygen_tank
+};
+global.tool_selected = tool_list.build
 population = 4;
 water = 5;
 oxygen = 5;
@@ -126,15 +134,6 @@ alarm[0] = global.alarmspeed;
             }
     }
 }
-
-if (keyboard_check_pressed(ord("f")))
-{
-    if (instance_position(mouse_x, mouse_y, obj_module_blank_floor))
-    {
-        instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_farm);
-    }
-}
-
 </string>
           </argument>
         </arguments>

@@ -63,24 +63,24 @@ if (mouse_check_button_pressed(mb_left)){
     //show_debug_message("Clicked at (" + string(device_mouse_x_to_gui(0)) + ", " + string(device_mouse_y_to_gui(0)) + ") on the display")
     if (device_mouse_x_to_gui(0) == median(x_gui, device_mouse_x_to_gui(0), x_gui+64) &amp;&amp; (device_mouse_y_to_gui(0) == median(y_gui, device_mouse_y_to_gui(0), y_gui+64)))
     {
-        state = true;
+        global.tool_selected = tool_list.water_tank;
         //show_debug_message("You can now choose a module for water");
-    } else if (state == true) and (instance_position(mouse_x, mouse_y, obj_character)) {
-        state = false;
+    } else if (global.tool_selected == tool_list.water_tank) and (instance_position(mouse_x, mouse_y, obj_character)) {
+        global.tool_selected = tool_list.empty;
         //show_debug_message("Character selected, food deselected");
-    } else if (state == true) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor)){
-        state = false;
+    } else if (global.tool_selected == tool_list.water_tank) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor)){
+        global.tool_selected = tool_list.empty;
         //show_debug_message("No longer choosing water");
-    } else if (state == true) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor)) {
+    } else if (global.tool_selected == tool_list.water_tank) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor)) {
         if (instance_position(mouse_x, mouse_y, obj_module_blank_floor).turns_alive &gt; -1) {
             instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_water_tank);
         }
-        state = true;   
+        global.tool_selected = tool_list.water_tank;  
     }
 }
 
 //Highlights icon based on selection
-if state == true
+if global.tool_selected == tool_list.water_tank
 {
     sprite_index = spr_waterchoice_selected;
 }

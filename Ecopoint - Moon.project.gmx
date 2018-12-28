@@ -36,6 +36,8 @@
       <sprite>sprites\spr_waterchoice</sprite>
       <sprite>sprites\spr_oxygentankchoice_selected</sprite>
       <sprite>sprites\spr_oxygentankchoice</sprite>
+      <sprite>sprites\spr_buildchoice_selected</sprite>
+      <sprite>sprites\spr_buildchoice</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_char1</sprite>
@@ -56,6 +58,7 @@
     <object>objects\obj_camera</object>
     <object>objects\obj_main</object>
     <object>objects\obj_foodselect</object>
+    <object>objects\obj_buildselect</object>
     <object>objects\obj_waterselect</object>
     <object>objects\obj_oxygentankselect</object>
     <objects name="Walls">
