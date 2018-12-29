@@ -189,9 +189,6 @@ clicked_gui = false;
           <argument>
             <kind>1</kind>
             <string>draw_text(0, 0, "Population: " + string(obj_main.population));
-draw_text(0, 10, "Water: " + string(obj_main.water));
-draw_text(0, 20, "Oxygen: " + string(obj_main.oxygen));
-draw_text(0, 30, "Food: " + string(obj_main.food));
 draw_text(0, 40, "Turn time: " + string(alarm[0]));
 </string>
           </argument>

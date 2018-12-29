@@ -9,13 +9,31 @@
   </sounds>
   <sprites name="sprites">
     <sprites name="Modules">
-      <sprite>sprites\spr_blankroom_top</sprite>
-      <sprite>sprites\spr_blankroom_floor</sprite>
-      <sprite>sprites\spr_farm</sprite>
-      <sprite>sprites\spr_oxygen_tank</sprite>
-      <sprite>sprites\spr_blankroom_bottom</sprite>
-      <sprite>sprites\spr_water_tank</sprite>
-      <sprite>sprites\spr_sleep</sprite>
+      <sprites name="farm">
+        <sprite>sprites\spr_farm</sprite>
+        <sprite>sprites\spr_farm_top</sprite>
+        <sprite>sprites\spr_farm_bottom</sprite>
+      </sprites>
+      <sprites name="water_tank">
+        <sprite>sprites\spr_water_tank</sprite>
+        <sprite>sprites\spr_water_tank_top1</sprite>
+        <sprite>sprites\spr_water_tank_bottom</sprite>
+      </sprites>
+      <sprites name="sleep">
+        <sprite>sprites\spr_sleep</sprite>
+        <sprite>sprites\spr_sleep_top</sprite>
+        <sprite>sprites\spr_sleep_bottom</sprite>
+      </sprites>
+      <sprites name="oxygen_tank">
+        <sprite>sprites\spr_oxygen_tank</sprite>
+        <sprite>sprites\spr_oxygen_tank_top1</sprite>
+        <sprite>sprites\spr_oxygen_tank_bottom</sprite>
+      </sprites>
+      <sprites name="blankroom">
+        <sprite>sprites\spr_blankroom_floor</sprite>
+        <sprite>sprites\spr_blankroom_bottom</sprite>
+        <sprite>sprites\spr_blankroom_top</sprite>
+      </sprites>
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_wall_right</sprite>
@@ -38,6 +56,9 @@
       <sprite>sprites\spr_oxygentankchoice</sprite>
       <sprite>sprites\spr_buildchoice_selected</sprite>
       <sprite>sprites\spr_buildchoice</sprite>
+      <sprite>sprites\spr_farm_resource</sprite>
+      <sprite>sprites\spr_water_resource</sprite>
+      <sprite>sprites\spr_oxygen_resource</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_char1</sprite>
@@ -48,7 +69,9 @@
     </sprites>
     <sprite>sprites\spr_camera</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\spr_background</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\main_start.gml</script>
@@ -57,10 +80,6 @@
   <objects name="objects">
     <object>objects\obj_camera</object>
     <object>objects\obj_main</object>
-    <object>objects\obj_foodselect</object>
-    <object>objects\obj_buildselect</object>
-    <object>objects\obj_waterselect</object>
-    <object>objects\obj_oxygentankselect</object>
     <objects name="Walls">
       <object>objects\obj_wall_up</object>
       <object>objects\obj_wall_right</object>
@@ -84,6 +103,15 @@
       <object>objects\obj_module_taken_floor</object>
     </objects>
     <object>objects\obj_character</object>
+    <objects name="UI">
+      <object>objects\obj_oxygentankselect</object>
+      <object>objects\obj_waterselect</object>
+      <object>objects\obj_buildselect</object>
+      <object>objects\obj_foodselect</object>
+      <object>objects\obj_food_resource</object>
+      <object>objects\obj_water_resource</object>
+      <object>objects\obj_oxygen_resource</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
