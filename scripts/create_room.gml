@@ -9,6 +9,6 @@
         {
             show_debug_message("Passed adjacent test")
             instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_floor);
-            set_space_taken(n,m);
+            set_space_taken(n,m, true);
         }
     }

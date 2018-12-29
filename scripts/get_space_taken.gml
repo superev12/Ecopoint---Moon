@@ -9,5 +9,5 @@
     else
     {
         var temp = ds_grid_get(obj_data.module_grid, n, m);
-        return ds_map_read(temp, data_slots.taken);
+        return ds_map_find_value(temp, data_slots.taken);
     }

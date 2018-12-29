@@ -62,7 +62,23 @@ for (i=0; i&lt;32; i++;)
 
 show_debug_message(string(module_grid))
 
-create_room(4, 3)
+set_space_taken(4,3, true);
+
+var z;
+var w;
+var k;
+
+for (z = 0; z &lt; 32; z++;)
+{
+    for (w = 0; w &lt; 32; w++;)
+    {
+        for (k = 0; k &lt; 2; k++;)
+        {
+            show_debug_message(ds_map_find_value(ds_grid_get(module_grid,z,w),k));      
+        }
+    
+    }
+}
 </string>
           </argument>
         </arguments>
