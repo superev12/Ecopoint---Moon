@@ -74,16 +74,24 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\get_space_taken.gml</script>
-    <script>scripts\get_space_module.gml</script>
-    <script>scripts\set_space_taken.gml</script>
-    <script>scripts\set_space_module.gml</script>
+    <script>scripts\build_module.gml</script>
     <script>scripts\create_room.gml</script>
+    <script>scripts\get_module_turns_alive.gml</script>
+    <script>scripts\get_room_turns_alive.gml</script>
+    <script>scripts\get_room_object.gml</script>
+    <script>scripts\get_space_module.gml</script>
+    <script>scripts\get_space_taken.gml</script>
+    <script>scripts\set_room_object.gml</script>
+    <script>scripts\set_module_turns_alive.gml</script>
+    <script>scripts\set_room_turns_alive.gml</script>
+    <script>scripts\set_space_module.gml</script>
+    <script>scripts\set_space_taken.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_character</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_main</object>
+    <object>objects\obj_data</object>
     <objects name="Walls">
       <object>objects\obj_wall_up</object>
       <object>objects\obj_wall_right</object>
@@ -115,7 +123,6 @@
       <object>objects\obj_water_resource</object>
       <object>objects\obj_oxygen_resource</object>
     </objects>
-    <object>objects\obj_data</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>

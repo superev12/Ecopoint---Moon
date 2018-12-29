@@ -34,17 +34,19 @@ var j;
 var data;
 enum data_slots{
     taken,
-    module
+    module,
+    room_turns_alive,
+    module_turns_alive,
+    room_object
 };
 enum module_types{
     none,
-    food,
+    farm,
     water_tank,
     oxygen_tank
 };
 
 module_grid = ds_grid_create(32,32);
-show_debug_message(string(obj_data.module_grid))
 
 for (i=0; i&lt;32; i++;)
 {
@@ -52,8 +54,11 @@ for (i=0; i&lt;32; i++;)
     {
         //show_debug_message(string(data_structure))
         data_structure = ds_map_create()
-        ds_map_add(data_structure, data_slots.taken, false)
-        ds_map_add(data_structure, data_slots.module, module_types.none)
+        ds_map_add(data_structure, data_slots.taken, false);
+        ds_map_add(data_structure, data_slots.module, module_types.none);
+        ds_map_add(data_structure, data_slots.room_turns_alive, -1);
+        ds_map_add(data_structure, data_slots.module_turns_alive, -1);
+        ds_map_add(data_structure, data_slots.room_object, 0);
         show_debug_message(string(data_structure))
         ds_grid_add(module_grid, i, j, data_structure);
         show_debug_message(string(ds_grid_get(module_grid,i,j)))
@@ -62,11 +67,15 @@ for (i=0; i&lt;32; i++;)
 
 show_debug_message(string(module_grid))
 
-set_space_taken(4,3, true);
+set_space_taken(4, 3, true);
+set_room_object(4, 3, instance_find(obj_module_blank_floor, 0))
 
+
+/*
 var z;
 var w;
 var k;
+
 
 for (z = 0; z &lt; 32; z++;)
 {
@@ -79,6 +88,7 @@ for (z = 0; z &lt; 32; z++;)
     
     }
 }
+*/
 </string>
           </argument>
         </arguments>
