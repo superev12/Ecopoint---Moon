@@ -63,13 +63,12 @@ if (mouse_check_button_pressed(mb_left)){
     if (device_mouse_x_to_gui(0) == median(x_gui, device_mouse_x_to_gui(0), x_gui+64) &amp;&amp; (device_mouse_y_to_gui(0) == median(y_gui, device_mouse_y_to_gui(0), y_gui+64)))
     {
         global.tool_selected = tool_list.build;
+        obj_main.clicked_gui = true;
+        show_debug_message(string(global.tool_selected))
         //show_debug_message("You can now build modules");
     } else if (global.tool_selected == tool_list.build) and (instance_position(mouse_x, mouse_y, obj_character)) {
         global.tool_selected = tool_list.empty;
         //show_debug_message("Character selected, food deselected");
-    } else if (global.tool_selected == tool_list.build) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor)){
-        global.tool_selected = tool_list.empty;
-        //show_debug_message("No longer building");  
     }
 }
 

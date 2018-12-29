@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>//Boolean to state whether or not the food option is selected
-state = false;
 x_gui = x;
 y_gui = y;
 </string>
@@ -63,15 +62,16 @@ if (mouse_check_button_pressed(mb_left)){
     if (device_mouse_x_to_gui(0) == median(x_gui, device_mouse_x_to_gui(0), x_gui+64) &amp;&amp; (device_mouse_y_to_gui(0) == median(y_gui, device_mouse_y_to_gui(0), y_gui+64)))
     {
         global.tool_selected = tool_list.food;
-        //show_debug_message("You can now choose a module for food");
+        obj_main.clicked_gui = true;
+        show_debug_message("You can now choose a module for food");
     } else if (global.tool_selected == tool_list.food) and (instance_position(mouse_x, mouse_y, obj_character)) 
     {
         global.tool_selected = tool_list.empty;
-        //show_debug_message("Character selected, food deselected");
+        show_debug_message("Character selected, food deselected");
     } else if (global.tool_selected == tool_list.food) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor))
     {
         global.tool_selected = tool_list.empty;
-        //show_debug_message("No longer choosing food");
+        show_debug_message("No longer choosing food");
     } 
 }
 

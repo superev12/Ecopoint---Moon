@@ -28,14 +28,15 @@
             <string>global.alarmspeed = room_speed * 5; //Length of turns
 global.transparency = 0.3;           //Degree of transparency for queued builds
 global.cameraspeed = 5;             //The speed the camera scrolls
-enum tool_list  {
+enum tool_list  {                   //The tool the user has selected
     empty,
     build,
     food,
     water_tank,
     oxygen_tank
 };
-global.tool_selected = tool_list.build
+global.tool_selected = tool_list.empty;
+clicked_gui = false;                 //Used to check if the user clicked the gui
 population = 4;
 water = 5;
 oxygen = 5;
@@ -105,7 +106,7 @@ alarm[0] = global.alarmspeed;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -122,18 +123,22 @@ alarm[0] = global.alarmspeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (mouse_check_button_pressed(mb_left) == true)
+            <string>//show_debug_message("clicked_gui is" + string(clicked_gui))
+if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
 {
-    //show_debug_message("Clicked at (" + string(mouse_x) + ", " + string(mouse_y) + ")")
+    show_debug_message("Clicked at (" + string(mouse_x) + ", " + string(mouse_y) + ")")
     //show_debug_message("Found" + string(instance_position(mouse_x, mouse_y, obj_wall_left)))
-    
+    show_debug_message(string(global.tool_selected))
     //Handles based on selected tool
     if (global.tool_selected = tool_list.build)
     {
+        show_debug_message("Trying to build")
         if (!instance_position(mouse_x, mouse_y, obj_module_blank_floor))
         {
+            show_debug_message("Passed empty check")
             if instance_position(mouse_x-64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x+64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x, mouse_y+64, obj_module_blank_floor) or instance_position(mouse_x, mouse_y-64, obj_module_blank_floor)
             {
+                show_debug_message("Passed adjacent test")
                 instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_floor);
             }
         }
@@ -160,6 +165,7 @@ alarm[0] = global.alarmspeed;
         global.tool_selected = tool_list.oxygen_tank;  
     }
 }
+clicked_gui = false;
 </string>
           </argument>
         </arguments>
