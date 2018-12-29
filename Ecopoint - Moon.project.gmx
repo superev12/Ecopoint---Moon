@@ -74,8 +74,8 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\main_start.gml</script>
-    <script>scripts\main.gml</script>
+    <script>scripts\get_space_taken.gml</script>
+    <script>scripts\set_space_taken.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_camera</object>

@@ -42,26 +42,29 @@ enum module_types {
     water_tank,
     oxygen_tank
 };
+show_debug_message("data_slots.taken = " + string(data_slots.taken))
+
+module_grid = ds_grid_create(32,32);
+show_debug_message(string(obj_data.module_grid))
+
 for (i=0; i&lt;32; i++;)
 {
     for (j=0; j&lt;32; j++;)
     {
         for (data=0; data&lt;3; data++;)
         {
-            //show_debug_message("i: " + string(i) + " j: " + string(j) + " Data: " + string(data))
             data_structure = 0;
             data_structure[data_slots.taken] = false;
             data_structure[data_slots.module] = module_types.none;
-            module_array[i, j] = data_structure;
+            ds_grid_add(module_grid, i, j, data_structure);
         }
     }
 }
 
-var module_reference = module_array[13,13];
-module_reference[0] = true;
-len = array_length_1d(module_reference);
-array_copy(module_array[13,13], 0, module_reference, 0, len)
-show_debug_message(string(module_array[13,13]))
+set_space_taken(13, 13, true);
+show_debug_message(string(get_space_taken(13, 13)));
+set_space_taken(13, 13, false);
+show_debug_message(string(get_space_taken(13, 13)));
 </string>
           </argument>
         </arguments>
