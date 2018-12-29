@@ -7,6 +7,6 @@
     }
     else
     {
-        var temp = ds_grid_get(module_grid, n, m)
-        return temp[data_slots.module];
+        var temp = ds_grid_get(obj_data.module_grid, n, m)
+        return ds_map_read(temp, data_slots.module);
     }

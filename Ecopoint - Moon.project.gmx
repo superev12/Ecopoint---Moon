@@ -78,6 +78,7 @@
     <script>scripts\get_space_module.gml</script>
     <script>scripts\set_space_taken.gml</script>
     <script>scripts\set_space_module.gml</script>
+    <script>scripts\create_room.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_camera</object>

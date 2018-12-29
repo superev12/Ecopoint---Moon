@@ -132,17 +132,8 @@ if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
     //Handles based on selected tool
     if (global.tool_selected = tool_list.build)
     {
-        show_debug_message("Trying to build")
-        if (!instance_position(mouse_x, mouse_y, obj_module_blank_floor))
-        {
-            show_debug_message("Passed empty check")
-            if instance_position(mouse_x-64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x+64, mouse_y, obj_module_blank_floor) or instance_position(mouse_x, mouse_y+64, obj_module_blank_floor) or instance_position(mouse_x, mouse_y-64, obj_module_blank_floor)
-            {
-                show_debug_message("Passed adjacent test")
-                instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_blank_floor);
-            }
-        }
-        
+        show_debug_message("Grid location: (" + string(floor(mouse_x/64)) + ", " + string(floor(mouse_y/64)) + ")")
+        create_room(floor(mouse_x/64), floor(mouse_y/64));
     }
     else if (global.tool_selected = tool_list.food) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor))
     {

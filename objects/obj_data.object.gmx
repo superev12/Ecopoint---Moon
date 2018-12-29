@@ -32,17 +32,16 @@ data is the piece of information we are referencing about it
 var i;
 var j;
 var data;
-enum data_slots {
+enum data_slots{
     taken,
     module
 };
-enum module_types {
+enum module_types{
     none,
     food,
     water_tank,
     oxygen_tank
 };
-show_debug_message("data_slots.taken = " + string(data_slots.taken))
 
 module_grid = ds_grid_create(32,32);
 show_debug_message(string(obj_data.module_grid))
@@ -51,15 +50,19 @@ for (i=0; i&lt;32; i++;)
 {
     for (j=0; j&lt;32; j++;)
     {
-        for (data=0; data&lt;3; data++;)
-        {
-            data_structure = 0;
-            data_structure[data_slots.taken] = false;
-            data_structure[data_slots.module] = module_types.none;
-            ds_grid_add(module_grid, i, j, data_structure);
-        }
+        //show_debug_message(string(data_structure))
+        data_structure = ds_map_create()
+        ds_map_add(data_structure, data_slots.taken, false)
+        ds_map_add(data_structure, data_slots.module, module_types.none)
+        show_debug_message(string(data_structure))
+        ds_grid_add(module_grid, i, j, data_structure);
+        show_debug_message(string(ds_grid_get(module_grid,i,j)))
     }
 }
+
+show_debug_message(string(module_grid))
+
+create_room(4, 3)
 </string>
           </argument>
         </arguments>

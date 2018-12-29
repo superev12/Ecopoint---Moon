@@ -9,7 +9,7 @@
     }
     else
     {
-        var temp = ds_grid_get(obj_data.module_grid, n, m);
-        temp[data_slots.taken] = taken;
+        temp = ds_grid_get(obj_data.module_grid, n, m);
+        ds_map_set(temp, data_slots.taken, taken);
         ds_grid_set(obj_data.module_grid, n, m, temp);
     }
