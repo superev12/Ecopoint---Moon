@@ -60,11 +60,6 @@ for (i=0; i&lt;32; i++;)
         }
     }
 }
-
-set_space_taken(13, 13, true);
-show_debug_message(string(get_space_taken(13, 13)));
-set_space_taken(13, 13, false);
-show_debug_message(string(get_space_taken(13, 13)));
 </string>
           </argument>
         </arguments>
