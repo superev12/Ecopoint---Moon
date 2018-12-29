@@ -112,6 +112,7 @@
       <object>objects\obj_water_resource</object>
       <object>objects\obj_oxygen_resource</object>
     </objects>
+    <object>objects\obj_data</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
