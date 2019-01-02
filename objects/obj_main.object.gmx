@@ -148,7 +148,7 @@ if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
     }
     else if (global.tool_selected == tool_list.oxygen_tank)
     {
-        build_module(floor(mouse_x/64), floor(mouse_y/64), module_types.farm);
+        build_module(floor(mouse_x/64), floor(mouse_y/64), module_types.oxygen_tank);
         global.tool_selected = tool_list.oxygen_tank;  
     }
 }

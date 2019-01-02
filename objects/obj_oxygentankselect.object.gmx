@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,111 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Boolean to state whether or not the food option is selected
-state = false;
+            <string>//Sets screenspace position to actual position in map
 x_gui = x;
 y_gui = y;
-
+tool = tool_list.oxygen_tank;
+on_sprite = spr_oxygentankchoice_selected;
+off_sprite = spr_oxygentankchoice;
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Set state etc
-/*
-    This checks for a click, and sets whether or not you're creating food
-    Then it adds a food module if the blankroom has been around for 1 turn
-    Or longer. For all other instances it presumes you're not doing anything,
-    so untoggles. Maybe we need to refine it?
-
-*/
-if (mouse_check_button_pressed(mb_left)){
-    if (device_mouse_x_to_gui(0) == median(x_gui, device_mouse_x_to_gui(0), x_gui+64) &amp;&amp; (device_mouse_y_to_gui(0) == median(y_gui, device_mouse_y_to_gui(0), y_gui+64)))
-    {
-        global.tool_selected = tool_list.oxygen_tank;
-        obj_main.clicked_gui = true;
-        //show_debug_message("You can now choose a module for Oxygen");
-    } else if (global.tool_selected == tool_list.oxygen_tank) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor)){
-        global.tool_selected = tool_list.empty;
-        //show_debug_message("No longer choosing oxygen");
-    } else if (global.tool_selected == tool_list.oxygen_tank) and (instance_position(mouse_x, mouse_y, obj_character)) {
-        global.tool_selected = tool_list.empty;
-        //show_debug_message("Character selected, oxygen");
-    }
-}
-
-//Highlights icon based on selection
-if global.tool_selected == tool_list.oxygen_tank
-{
-    sprite_index = spr_oxygentankchoice_selected;
-}
-else
-{
-    sprite_index = spr_oxygentankchoice;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_self()
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

@@ -121,6 +121,7 @@
       <object>objects\obj_food_resource</object>
       <object>objects\obj_water_resource</object>
       <object>objects\obj_oxygen_resource</object>
+      <object>objects\obj_button</object>
     </objects>
   </objects>
   <rooms name="rooms">
