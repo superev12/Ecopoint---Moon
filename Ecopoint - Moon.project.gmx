@@ -114,14 +114,16 @@
       <object>objects\obj_module_taken_floor</object>
     </objects>
     <objects name="UI">
-      <object>objects\obj_oxygentankselect</object>
-      <object>objects\obj_waterselect</object>
-      <object>objects\obj_buildselect</object>
-      <object>objects\obj_foodselect</object>
+      <objects name="tool_buttons">
+        <object>objects\obj_oxygentankselect</object>
+        <object>objects\obj_waterselect</object>
+        <object>objects\obj_foodselect</object>
+        <object>objects\obj_buildselect</object>
+        <object>objects\obj_toolbutton</object>
+      </objects>
       <object>objects\obj_food_resource</object>
       <object>objects\obj_water_resource</object>
       <object>objects\obj_oxygen_resource</object>
-      <object>objects\obj_button</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -35,16 +35,19 @@ enum tool_list  {                   //The tool the user has selected
     water_tank,
     oxygen_tank
 };
+
 global.tool_selected = tool_list.empty;
 clicked_gui = false;                 //Used to check if the user clicked the gui
-population = 4;
-water = 5;
-oxygen = 5;
+
+//Initialise resource variables
+population_count = 0;
+farm_count = 0;
+oxygen_tank_count = 0;
+water_tank_count = 0;
+oxygen = 0;
+water = 0;
 food = 0;
-electricity = 0;
-silicon = 0;
-iron = 0;
-aluminium = 0;
+
 alarm[0] =  global.alarmspeed;
 audio_play_sound(snd_main_theme, 1, true);
 audio_master_gain(0.2);
@@ -70,35 +73,17 @@ audio_master_gain(0.2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var population = instance_number(obj_character)
-var water_used = instance_number(obj_module_farm) + population;
-var water_produced = 4;
-var food_used = population;
-var food_produced = instance_number(obj_module_farm) * 10;
-show_debug_message("Food used: " + string(food_used))
-show_debug_message("Food produced: " + string(food_produced))
+            <string>population_count = instance_number(obj_character);
+farm_count = instance_number(obj_module_farm);
+oxygen_tank_count = instance_number(obj_module_oxygen_tank);
+water_tank_count = instance_number(obj_module_water_tank);
 
-
-if ((water + water_produced - water_used) &gt; -1)
-{
-    water = water + water_produced - water_used;
-} 
-else
-{
-    show_debug_message("Not enough water, someone died")
-    population -= 1;
-}
-
-if ((food + food_produced - food_used) &gt; -1)
-{
-    food = food + food_produced - food_used;
-} 
-else
-{
-    show_debug_message("Not enough food, someone died")
-    population -= 1;
-}
-
+oxygen_gain = 0;
+oxygen_loss = 0;
+food_gain = farm_count;
+food_loss = population_count;
+water_gain = 0;
+water_loss = farm_count;
 
 alarm[0] = global.alarmspeed;
 </string>
@@ -175,7 +160,7 @@ clicked_gui = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(0, 0, "Population: " + string(obj_main.population));
+            <string>draw_text(0, 0, "Population: " + string(obj_main.population_count));
 draw_text(0, 40, "Turn time: " + string(alarm[0]));
 </string>
           </argument>
