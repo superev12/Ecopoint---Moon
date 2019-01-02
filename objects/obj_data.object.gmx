@@ -37,7 +37,8 @@ enum data_slots{
     module,
     room_turns_alive,
     module_turns_alive,
-    room_object
+    room_object,
+    module_object
 };
 enum module_types{
     none,
