@@ -128,7 +128,6 @@ else
             <kind>1</kind>
             <string>alarm[0] = global.alarmspeed;
 turns_alive += 1;
-set_room_turns_alive(floor(x/64), floor(y/64), get_room_turns_alive(floor(x/64), floor(y/64)+1));
 </string>
           </argument>
         </arguments>

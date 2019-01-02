@@ -19,7 +19,6 @@
                 show_debug_message("There is not already a module here");
                 show_debug_message("Placing module");
                 set_space_module(n, m, module);
-                instance_create(floor(mouse_x/64)*64, floor(mouse_y/64)*64-12, obj_module_farm);
             }
         }
     }

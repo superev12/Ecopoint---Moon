@@ -82,8 +82,6 @@
     <script>scripts\get_space_module.gml</script>
     <script>scripts\get_space_taken.gml</script>
     <script>scripts\set_room_object.gml</script>
-    <script>scripts\set_module_turns_alive.gml</script>
-    <script>scripts\set_room_turns_alive.gml</script>
     <script>scripts\set_space_module.gml</script>
     <script>scripts\set_space_taken.gml</script>
     <script>scripts\map_module_to_object.gml</script>
