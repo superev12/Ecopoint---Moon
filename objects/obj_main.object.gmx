@@ -50,7 +50,7 @@ food = 0;
 
 alarm[0] =  global.alarmspeed;
 audio_play_sound(snd_main_theme, 1, true);
-audio_master_gain(0.2);
+audio_master_gain(0);
 </string>
           </argument>
         </arguments>

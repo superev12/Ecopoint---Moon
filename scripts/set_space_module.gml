@@ -12,6 +12,7 @@
         var temp = ds_grid_get(obj_data.module_grid, n, m);
         ds_map_set(temp, data_slots.module, module);
         ds_map_set(temp, data_slots.module_object, instance_create(n*64, m*64-12, map_module_to_object(module)));
+        ds_map_set(temp, data_slots.taken, true);
         ds_grid_set(obj_data.module_grid, n, m, temp);
 
     }
