@@ -55,13 +55,12 @@ for (i=0; i&lt;32; i++;)
     {
         //show_debug_message(string(data_structure))
         data_structure = ds_map_create()
-        ds_map_add(data_structure, data_slots.taken, false);
-        ds_map_add(data_structure, data_slots.module, module_types.none);
-        ds_map_add(data_structure, data_slots.room_turns_alive, -1);
-        ds_map_add(data_structure, data_slots.module_turns_alive, -1);
-        ds_map_add(data_structure, data_slots.room_object, 0);
-        show_debug_message(string(data_structure))
-        ds_grid_add(global.module_grid, i, j, data_structure);
+        data_structure[? data_slots.taken] = false;
+        data_structure[? data_slots.module] = module_types.none;
+        data_structure[? data_slots.room_turns_alive] = -1;
+        data_structure[? data_slots.module_turns_alive] = -1;
+        data_structure[? data_slots.room_object] = 0;
+        global.module_grid[# i, j] = data_structure;
         show_debug_message(string(ds_grid_get(global.module_grid,i,j)))
     }
 }
