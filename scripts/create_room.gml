@@ -6,13 +6,13 @@
     {
         show_debug_message("Passed empty check");
         
-        var temp = ds_grid_get(obj_data.module_grid, n-1, m);
+        var temp = ds_grid_get(global.module_grid, n-1, m);
         show_debug_message(string(ds_map_find_value(temp,data_slots.taken)));
-        var temp = ds_grid_get(obj_data.module_grid, n+1, m);
+        var temp = ds_grid_get(global.module_grid, n+1, m);
         show_debug_message(string(ds_map_find_value(temp,data_slots.taken)));
-        var temp = ds_grid_get(obj_data.module_grid, n, m-1);
+        var temp = ds_grid_get(global.module_grid, n, m-1);
         show_debug_message(string(ds_map_find_value(temp,data_slots.taken)));
-        var temp = ds_grid_get(obj_data.module_grid, n, m+1);
+        var temp = ds_grid_get(global.module_grid, n, m+1);
         show_debug_message(string(ds_map_find_value(temp,data_slots.taken)));
         
         

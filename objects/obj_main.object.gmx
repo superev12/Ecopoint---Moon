@@ -137,6 +137,17 @@ if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
         global.tool_selected = tool_list.oxygen_tank;  
     }
 }
+
+if (mouse_check_button_pressed(mb_right) == true) and (clicked_gui == false)
+{
+    show_debug_message("(" + string(floor(mouse_x/64)) + ", " + string(floor(mouse_y/64)) + ")")
+    show_debug_message(string(global.module_grid));
+    var checked_tile = global.module_grid[# floor(mouse_x/64), floor(mouse_y/64)];
+    show_debug_message("Databaseid: " + string(checked_tile))
+    show_debug_message("Taken: " + string(checked_tile[? data_slots.taken]));
+    show_debug_message("Module: " + string(checked_tile[? data_slots.module]));
+    show_debug_message("Room object: " + string(checked_tile[? data_slots.room_object]));
+}
 clicked_gui = false;
 </string>
           </argument>

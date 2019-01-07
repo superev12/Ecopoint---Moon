@@ -8,6 +8,7 @@
     }
     else
     {
-        var temp = ds_grid_get(obj_data.module_grid, n, m);
-        return ds_map_find_value(temp, data_slots.room_object).turns_alive;
+        var temp = ds_grid_get(global.module_grid, n, m);
+        var this_room = ds_map_find_value(temp, data_slots.room_object);
+        return this_room.turns_alive;
     }

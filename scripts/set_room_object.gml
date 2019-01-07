@@ -9,7 +9,7 @@
     }
     else
     {
-        var temp = ds_grid_get(obj_data.module_grid, n, m)
+        var temp = ds_grid_get(global.module_grid, n, m)
         ds_map_replace(temp, data_slots.room_object, object);
-        ds_grid_set(obj_data.module_grid, n, m, temp);
+        ds_grid_set(global.module_grid, n, m, temp);
     }

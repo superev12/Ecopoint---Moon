@@ -47,7 +47,7 @@ enum module_types{
     oxygen_tank
 };
 
-module_grid = ds_grid_create(32,32);
+global.module_grid = ds_grid_create(32,32);
 
 for (i=0; i&lt;32; i++;)
 {
@@ -61,12 +61,12 @@ for (i=0; i&lt;32; i++;)
         ds_map_add(data_structure, data_slots.module_turns_alive, -1);
         ds_map_add(data_structure, data_slots.room_object, 0);
         show_debug_message(string(data_structure))
-        ds_grid_add(module_grid, i, j, data_structure);
-        show_debug_message(string(ds_grid_get(module_grid,i,j)))
+        ds_grid_add(global.module_grid, i, j, data_structure);
+        show_debug_message(string(ds_grid_get(global.module_grid,i,j)))
     }
 }
 
-show_debug_message(string(module_grid))
+show_debug_message(string(global.module_grid))
 
 set_space_taken(4, 3, true);
 set_room_object(4, 3, instance_find(obj_module_blank_floor, 0))
