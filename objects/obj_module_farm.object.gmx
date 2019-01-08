@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>depth = -y - 4;
 self.turns_alive = -1;
+self.active = false;
 alarm[0] = obj_main.alarm[0];
 //Sets turn timer alarm
 </string>
@@ -54,6 +55,29 @@ alarm[0] = obj_main.alarm[0];
             <string>alarm[0] = global.alarmspeed;
 turns_alive += 1;
 //Resets turn timer, increments time alive
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.active = false;
 </string>
           </argument>
         </arguments>

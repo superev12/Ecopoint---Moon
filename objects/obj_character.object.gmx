@@ -26,8 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>sprite_index = choose(spr_char1, spr_char2, spr_char3, spr_char4, spr_char5);
-image_speed = 2
-picked = false
+image_speed = 2;
+picked = false;
+room_x = floor(x/64)*64;
+room_y = floor(x/64)*64;
 </string>
           </argument>
         </arguments>

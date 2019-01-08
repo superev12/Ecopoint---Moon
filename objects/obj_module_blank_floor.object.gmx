@@ -31,11 +31,6 @@ self.turns_alive = -1;
 //Room can't be allocated for one turn
 alarm[0] = obj_main.alarm[0];
 
-//
-
-
-
-
 instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_module_blank_bottom);
 instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_module_blank_top);
 //Checks for door creation

@@ -78,6 +78,16 @@ farm_count = instance_number(obj_module_farm);
 oxygen_tank_count = instance_number(obj_module_oxygen_tank);
 water_tank_count = instance_number(obj_module_water_tank);
 
+active_farms = 0;
+for (i = 0; i &lt; instance_number(obj_module_farm); i++)
+{    
+    if instance_find(obj_module_farm, i).active
+    {
+        active_farms += 1;
+    }
+}
+show_debug_message("Active farms: " +  string(active_farms));
+    
 oxygen_gain = 0;
 oxygen_loss = 0;
 food_gain = farm_count;
@@ -149,6 +159,52 @@ if (mouse_check_button_pressed(mb_right) == true) and (clicked_gui == false)
     show_debug_message("Room object: " + string(checked_tile[? data_slots.room_object]));
 }
 clicked_gui = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for (i=0; i&gt;instance_number(obj_module_farm); i++)
+{
+    thing_here = false;
+    with instance_find(obj_module_farm, i)
+    {
+        self.active = false;
+        myx = self.x;
+        myy = self.y;
+        for (j=0; j&gt;instance_number(obj_character); j++)
+        {
+            with instance_find(obj_character, j)
+            {
+                if floor(x/64)*64 == myx and floor(y/64)*64 == myy
+                {
+                    thing_here = true;
+                }
+            }
+            if thing_here
+            {
+                self.active = true;
+            }
+        }       
+    }
+}
 </string>
           </argument>
         </arguments>
