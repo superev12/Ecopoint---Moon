@@ -34,6 +34,9 @@
         <sprite>sprites\spr_blankroom_bottom</sprite>
         <sprite>sprites\spr_blankroom_top</sprite>
       </sprites>
+      <sprites name="food_tank">
+        <sprite>sprites\spr_food_tank</sprite>
+      </sprites>
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_wall_right</sprite>
@@ -59,6 +62,8 @@
       <sprite>sprites\spr_farm_resource</sprite>
       <sprite>sprites\spr_water_resource</sprite>
       <sprite>sprites\spr_oxygen_resource</sprite>
+      <sprite>sprites\spr_foodtankchoice_selected</sprite>
+      <sprite>sprites\spr_foodtankchoice</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_char1</sprite>
@@ -106,6 +111,7 @@
     </objects>
     <objects name="Modules">
       <object>objects\obj_module_oxygen_tank</object>
+      <object>objects\obj_module_food_tank</object>
       <object>objects\obj_module_sleep</object>
       <object>objects\obj_module_farm</object>
       <object>objects\obj_module_blank_floor</object>
@@ -121,6 +127,7 @@
         <object>objects\obj_foodselect</object>
         <object>objects\obj_buildselect</object>
         <object>objects\obj_toolbutton</object>
+        <object>objects\obj_foodtankselect</object>
       </objects>
       <object>objects\obj_food_resource</object>
       <object>objects\obj_water_resource</object>

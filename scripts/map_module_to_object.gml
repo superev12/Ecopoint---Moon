@@ -12,4 +12,8 @@ else if (module == module_types.oxygen_tank)
 {
     return obj_module_oxygen_tank;
 }
+else if (module == module_types.food_tank)
+{
+    return obj_module_food_tank;
+}
 
