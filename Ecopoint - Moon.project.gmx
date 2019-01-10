@@ -91,6 +91,7 @@
     <script>scripts\set_space_taken.gml</script>
     <script>scripts\map_module_to_object.gml</script>
     <script>scripts\count_characters_in_room.gml</script>
+    <script>scripts\place_character.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_character</object>
