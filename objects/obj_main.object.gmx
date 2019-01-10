@@ -106,13 +106,20 @@ water_gain = 0;
 water_loss = farm_count;
 food_cap = 10 + food_tank_count * 8
 
-if (food + food_gain - food_loss &lt;= food_cap)
+if (food + food_gain - food_loss &lt;= food_cap) and (food + food_gain - food_loss &gt;= 0)
 {
     food = food + food_gain - food_loss;
 }
 else
 {
-    food = food_cap
+    if (food + food_gain - food_loss &gt; food_cap)
+    {
+        food = food_cap;
+    }
+    else
+    {
+        food = 0;
+    }
 }
 
 alarm[0] = global.alarmspeed;
