@@ -53,6 +53,7 @@ room_y = floor(x/64)*64;
           <argument>
             <kind>1</kind>
             <string>depth = -y-6;
+bottomrow = false;
 if (mouse_check_button_pressed(mb_left))
 {
     if instance_position(mouse_x, mouse_y, self)
@@ -62,40 +63,40 @@ if (mouse_check_button_pressed(mb_left))
     else if (picked == true) and (instance_position(mouse_x, mouse_y, obj_module_blank_floor))
     {
         if !instance_position(mouse_x, mouse_y, obj_character)
-        {   
-            //Snaps to 3x3 grid for x
-            show_debug_message("(" + string(floor(mouse_x/64)) + ", " + string(floor(mouse_y/64)))
-            if (mouse_x % 64 == median(4, mouse_x % 64, 23))
-            {
-                x = floor(mouse_x/64)*64 + 7
-                show_debug_message("Moving where x = 1")
-            }
-            else if (mouse_x % 64 == median(24, mouse_x % 64, 39))
-            {
-                x = floor(mouse_x/64)*64 + 24
-                show_debug_message("Moving where x = 2")
-            }
-            else if (mouse_x % 64 == median(40, mouse_x % 64, 59))
-            {
-                x = floor(mouse_x/64)*64 + 40
-                show_debug_message("Moving where x = 3")
-            }
+        {            
             //Snaps to 3x3 grid for y
             if (mouse_y % 64 == median(4, mouse_y % 64, 23))
             {
-                y = floor(mouse_y/64)*64 + 7
-                show_debug_message("Moving where y = 1")
+                y = floor(mouse_y/64)*64 + 7;
+                show_debug_message("Moving where y = 1");
             }
             else if (mouse_y % 64 == median(24, mouse_y % 64, 39))
             {
-                y = floor(mouse_y/64)*64 + 24
-                show_debug_message("Moving where y = 2")
+                y = floor(mouse_y/64)*64 + 24;
+                show_debug_message("Moving where y = 2");
             }
             else if (mouse_y % 64 == median(40, mouse_y % 64, 59))
             {
-                y = floor(mouse_x/64)*64 + 40
-                show_debug_message("Moving where y = 3")
+                show_debug_message("Selected bottom row");
+                bottomrow = true;
             }
+            //Snaps to 3x3 grid for x
+            show_debug_message("(" + string(floor(mouse_x/64)) + ", " + string(floor(mouse_y/64)))
+            if (mouse_x % 64 == median(4, mouse_x % 64, 23)) and bottomrow = false
+            {
+                x = floor(mouse_x/64)*64 + 7;
+                show_debug_message("Moving where x = 1");
+            }
+            else if (mouse_x % 64 == median(24, mouse_x % 64, 39)) and bottomrow = false
+            {
+                x = floor(mouse_x/64)*64 + 24;
+                show_debug_message("Moving where x = 2");
+            }
+            else if (mouse_x % 64 == median(40, mouse_x % 64, 59)) and bottomrow = false
+            {
+                x = floor(mouse_x/64)*64 + 40;
+                show_debug_message("Moving where x = 3");
+            } 
             picked = false
         }
     }
