@@ -79,11 +79,15 @@ oxygen_tank_count = instance_number(obj_module_oxygen_tank);
 water_tank_count = instance_number(obj_module_water_tank);
 
 active_farms = 0;
-for (i = 0; i &lt; instance_number(obj_module_farm); i++)
+for (i = 0; i &lt; 32; i++)
 {    
-    if instance_find(obj_module_farm, i).active
+    for (j = 0; j &lt; 32; j++)
     {
-        active_farms += 1;
+        var temp = global.module_grid[# i, j];
+        if temp[? data_slots.characters_in_room] &gt; 0 and temp[? data_slots.module] == module_types.farm
+        {
+            active_farms += 1;
+        }
     }
 }
 show_debug_message("Active farms: " +  string(active_farms));
@@ -157,54 +161,10 @@ if (mouse_check_button_pressed(mb_right) == true) and (clicked_gui == false)
     show_debug_message("Taken: " + string(checked_tile[? data_slots.taken]));
     show_debug_message("Module: " + string(checked_tile[? data_slots.module]));
     show_debug_message("Room object: " + string(checked_tile[? data_slots.room_object]));
+    var temp = global.module_grid[# floor(mouse_x/64), floor(mouse_y/64)];
+    show_debug_message("Number of characters in room is: " + string(temp[? data_slots.characters_in_room]));
 }
 clicked_gui = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>for (i=0; i&gt;instance_number(obj_module_farm); i++)
-{
-    thing_here = false;
-    with instance_find(obj_module_farm, i)
-    {
-        self.active = false;
-        myx = self.x;
-        myy = self.y;
-        for (j=0; j&gt;instance_number(obj_character); j++)
-        {
-            with instance_find(obj_character, j)
-            {
-                if floor(x/64)*64 == myx and floor(y/64)*64 == myy
-                {
-                    thing_here = true;
-                }
-            }
-            if thing_here
-            {
-                self.active = true;
-            }
-        }       
-    }
-}
 </string>
           </argument>
         </arguments>

@@ -38,7 +38,8 @@ enum data_slots{
     room_turns_alive,
     module_turns_alive,
     room_object,
-    module_object
+    module_object,
+    characters_in_room
 };
 enum module_types{
     none,
@@ -60,6 +61,7 @@ for (i=0; i&lt;32; i++;)
         data_structure[? data_slots.room_turns_alive] = -1;
         data_structure[? data_slots.module_turns_alive] = -1;
         data_structure[? data_slots.room_object] = 0;
+        data_structure[? data_slots.characters_in_room] = 0;
         global.module_grid[# i, j] = data_structure;
         show_debug_message(string(ds_grid_get(global.module_grid,i,j)))
     }
@@ -89,6 +91,38 @@ for (z = 0; z &lt; 32; z++;)
     }
 }
 */
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Checks through rooms and updates their character counts
+for (i=0; i&lt;32; i++)
+{
+    for (j=0; j&lt;32; j++)
+    {
+        var temp = global.module_grid[# i, j];
+        temp[? data_slots.characters_in_room] = count_characters_in_room(i, j);
+        global.module_grid[# i, j] = temp;
+    }
+}
 </string>
           </argument>
         </arguments>
