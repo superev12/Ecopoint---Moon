@@ -120,6 +120,7 @@
       <object>objects\obj_module_blank_bottom</object>
       <object>objects\obj_module_water_tank</object>
       <object>objects\obj_module_taken_floor</object>
+      <object>objects\obj_module_parent</object>
     </objects>
     <objects name="UI">
       <objects name="tool_buttons">
