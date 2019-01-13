@@ -53,6 +53,12 @@ food_cap = 10
 alarm[0] =  global.alarmspeed;
 audio_play_sound(snd_main_theme, 1, true);
 audio_master_gain(0);
+
+//Aspect ratio juggling
+window_w = window_get_width();
+window_h = window_get_height();
+window_x = window_get_x();
+window_y = window_get_y();
 </string>
           </argument>
         </arguments>
@@ -192,6 +198,27 @@ if (mouse_check_button_pressed(mb_right) == true) and (clicked_gui == false)
     var temp = global.module_grid[# floor(mouse_x/64), floor(mouse_y/64)];
     show_debug_message("Number of characters in room is: " + string(temp[? data_slots.characters_in_room]));
 }
+
+//View aspect ratio maintaining, from Reddit 'https://www.reddit.com/r/gamemaker/comments/5cnsli/resize_window_without_scale/'
+var _w = window_get_width();
+var _h = window_get_height();
+var _x = window_get_x();
+var _y = window_get_y();
+if (_w != window_w) or (_h != window_h) {
+    view_wview[0] = _w;
+    view_hview[0] = _h;
+    view_wport[0] = _w;
+    view_hport[0] = _h;
+    view_xview[0] += _x - window_x;
+    view_yview[0] += _y - window_y;
+    surface_resize(application_surface,_w,_h);
+    display_reset(0,0);
+    window_w = _w;
+    window_h = _h;
+}
+window_x = _x;
+window_y = _y;
+
 clicked_gui = false;
 </string>
           </argument>
