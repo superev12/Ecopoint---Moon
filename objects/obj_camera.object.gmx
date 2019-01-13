@@ -72,6 +72,8 @@ if (keyboard_check_pressed(vk_pageup))
     //show_debug_message("Zoom in")
     view_hview[0] *= 0.8;
     view_wview[0] *= 0.8;
+    view_xview[0] = view_xview[0] + 0.1 * view_wview[0];
+    view_yview[0] = view_yview[0] + 0.1 * view_hview[0];
 }
 
 if (keyboard_check_pressed(vk_pagedown))
@@ -79,6 +81,8 @@ if (keyboard_check_pressed(vk_pagedown))
     //show_debug_message("Zoom out")
     view_hview[0] *= 1.2;
     view_wview[0] *= 1.2;
+    view_xview[0] = view_xview[0] - 0.1 * view_wview[0];
+    view_yview[0] = view_yview[0] - 0.1 * view_hview[0];
 }
 </string>
           </argument>
