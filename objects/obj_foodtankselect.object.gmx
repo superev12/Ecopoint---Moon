@@ -26,8 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Sets screenspace position to actual position in map
-x_gui = x;
-y_gui = y;
+order = 2;
 tool = tool_list.food_tank;
 on_sprite = spr_foodtankchoice_selected;
 off_sprite = spr_foodtankchoice;
