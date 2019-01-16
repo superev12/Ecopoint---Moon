@@ -95,19 +95,21 @@ if (mouse_check_button_pressed(mb_left))
 if (mouse_wheel_up())
 {
     //Zoom in
-    show_debug_message("Old view: " + string(view_xview[0]) + ", " + string(view_yview[0]));
-    screen_to_view_ratio_x = window_get_width() / view_wview[0];
-    screen_to_view_ratio_y = window_get_height() / view_hview[0];
+    view_xview[0] = mouse_x - 0.4 * view_wview[0];
+    view_yview[0] = mouse_y - 0.4 * view_hview[0];
     view_wview[0] *= 0.8;
     view_hview[0] *= 0.8;
-    view_xview[0] = view_xview[0] + (window_mouse_get_x() * screen_to_view_ratio_x - 0.4 * view_wview[0]);
-    view_yview[0] = view_yview[0] + (window_mouse_get_y() * screen_to_view_ratio_y - 0.4 * view_hview[0]);
-    show_debug_message("New view: " + string(view_xview[0]) + ", " + string(view_yview[0]));
+    
 }
 
 if (mouse_wheel_down())
 {
     //Zoom out
+    view_xview[0] = mouse_x - 0.6 * view_wview[0];
+    view_yview[0] = mouse_y - 0.6 * view_hview[0];
+    view_wview[0] *= 1.2;
+    view_hview[0] *= 1.2;
+    
 }
 </string>
           </argument>
