@@ -64,6 +64,7 @@
       <sprite>sprites\spr_oxygen_resource</sprite>
       <sprite>sprites\spr_foodtankchoice_selected</sprite>
       <sprite>sprites\spr_foodtankchoice</sprite>
+      <sprite>sprites\spr_selected_info</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_char1</sprite>
@@ -134,6 +135,7 @@
       <object>objects\obj_food_resource</object>
       <object>objects\obj_water_resource</object>
       <object>objects\obj_oxygen_resource</object>
+      <object>objects\obj_selected_info</object>
     </objects>
   </objects>
   <rooms name="rooms">
