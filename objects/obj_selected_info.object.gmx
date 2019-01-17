@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>x = window_get_width() - 256;
 y = 0;
+global.selected_obj = obj_main;
 </string>
           </argument>
         </arguments>
@@ -49,7 +50,13 @@ y = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self()
+            <string>draw_self();
+
+var temp = sprite_get_name(object_get_sprite(global.selected_obj));
+draw_sprite(temp, 1, x+12, y + 30);
+
+draw_set_color(c_black);
+draw_text(x+64, y + 10, object_get_name(global.selected_obj));
 </string>
           </argument>
         </arguments>
