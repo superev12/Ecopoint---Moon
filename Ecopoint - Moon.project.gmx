@@ -146,7 +146,7 @@
           <object>objects\obj_foodselect</object>
         </objects>
         <object>objects\obj_button</object>
-        <object>objects\obj_storageselecct</object>
+        <object>objects\obj_storageselect</object>
         <object>objects\obj_machineselect</object>
       </objects>
       <object>objects\obj_food_resource</object>

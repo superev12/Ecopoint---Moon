@@ -28,8 +28,8 @@
             <string>//Sets screenspace position to actual position in map
 order = 2;
 tool = tool_list.food_tank;
-on_sprite = spr_foodtankchoice_selected;
-off_sprite = spr_foodtankchoice;
+on_sprite = spr_foodstoragechoice_selected;
+off_sprite = spr_foodstoragechoice;
 </string>
           </argument>
         </arguments>

@@ -28,8 +28,8 @@
             <string>//Sets screenspace position to actual position in map
 order = 3;
 tool = tool_list.water_tank;
-on_sprite = spr_waterchoice_selected;
-off_sprite = spr_waterchoice;
+on_sprite = spr_waterstoragechoice_selected;
+off_sprite = spr_waterstoragechoice;
 </string>
           </argument>
         </arguments>
