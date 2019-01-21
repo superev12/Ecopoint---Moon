@@ -27,22 +27,31 @@
             <kind>1</kind>
             <string>//Set state etc
 /*
-    Checks for a click in the icon. If true, sets 'clicked gui' global to true to occlude 
-    Then sets the selected tool in the main to self.
+    
 
 */
 if (mouse_check_button_pressed(mb_left)){
     if (device_mouse_x_to_gui(0) == median(x_gui, device_mouse_x_to_gui(0), x_gui+64) &amp;&amp; (device_mouse_y_to_gui(0) == median(y_gui, device_mouse_y_to_gui(0), y_gui+64)))
     {
-        global.tool_selected = self.tool;
-        obj_main.clicked_gui = true;
-        show_debug_message("Tool " + string(self.tool) + " selected");
-    } else if (global.tool_selected == self.tool) and (!instance_position(mouse_x, mouse_y, obj_module_blank_floor)){
-        global.tool_selected = self.tool;
-        //show_debug_message("No longer choosing oxygen");
-    } else if (global.tool_selected == self.tool) and (instance_position(mouse_x, mouse_y, obj_character)) {
-        global.tool_selected = tool_list.empty;
-        //show_debug_message("Character selected, oxygen");
+        if (selected == false)
+        {
+            selected = true;
+            for (i=0; i&lt;array_length_1d(child_buttons); i++)
+            {
+                active_children[i] = instance_create(x, y, child_buttons[i]);
+                active_children[i].x_gui = self.x_gui - (i+1);
+                active_children[i].y_gui = self.y_gui;
+            }
+            obj_main.clicked_gui = true;
+        }
+        else
+        {
+            for (i=0; i&lt;array_length_1d(active_children); i++)
+            {
+                instance_destroy(active_children[i])
+            }
+            seleced = false;   
+        }
     }
 }
 
