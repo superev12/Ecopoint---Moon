@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>//Initialises this button
 selected = false;
-dock = ui_dock.right;
 
 //Array lists all tools in this toolbox
 child_buttons[0] = obj_foodstorageselect;
