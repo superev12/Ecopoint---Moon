@@ -2,12 +2,55 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
-  <depth>0</depth>
+  <visible>0</visible>
+  <depth>-10000</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Toolbar is an empty anchor object which the buttons use as a reference to position themselves
+//And spawns the button objects
+x = window_get_width() - 64;
+y = 128
+
+//Assigns order of child buttons to matrix
+child_buttons[0] = obj_buildselect;
+child_buttons[1] = obj_machineselect;
+child_buttons[2] = obj_storageselect;
+
+//Creates all child buttons with locations, stores references in active_children
+for (i = 0; i&lt;array_length_1d(child_buttons); i++)
+{
+    temp = instance_create(x, y + (64 * i), child_buttons[i]);
+    show_debug_message("created " + string(temp) + " at " + string(x) + ", " + string(y));
+    temp.order = i;
+    temp.parent = self;
+    temp.x_gui = x;
+    temp.y_gui = y + (temp.order * 64);
+    active_children[i] = temp;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -19,62 +62,23 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Set state etc
-/*
-    Parent for all button types, handles drawing and sprite setting
-*/
+            <string>//Sets own position relative to screen
+x = window_get_width() - 64;
+y = 128;
+
+//For all children, sets gui location relative to self
+for (i = 0; i&lt;array_length_1d(active_children); i++)
+{
+    active_children[i].x_gui = x;
+    active_children[i].y_gui = y + (i * 64);
+}
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_self()
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

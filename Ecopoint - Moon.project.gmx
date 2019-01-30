@@ -153,6 +153,7 @@
       <object>objects\obj_water_resource</object>
       <object>objects\obj_oxygen_resource</object>
       <object>objects\obj_selected_info</object>
+      <object>objects\obj_toolbar</object>
     </objects>
   </objects>
   <rooms name="rooms">

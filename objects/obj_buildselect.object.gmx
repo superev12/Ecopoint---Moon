@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>//Sets screenspace position to actual position in map
-order = 0;
 tool = tool_list.build;
+order = 0;
 on_sprite = spr_buildchoice_selected;
 off_sprite = spr_buildchoice;
 </string>

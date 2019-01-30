@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Set state etc
+            <string>//Sets screen location
+x = x_gui;
+y = y_gui;
+
+//Set state etc
 /*
     Checks for a click in the icon. If true, sets 'clicked gui' global to true to occlude 
     Then sets the selected tool in the main to self.

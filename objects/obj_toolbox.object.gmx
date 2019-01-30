@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Set state etc
+            <string>//Sets screen location
+x = x_gui;
+y = y_gui;
+
+//Set state etc
 /*
     
 
@@ -38,20 +42,37 @@ if (mouse_check_button_pressed(mb_left)){
             selected = true;
             for (i=0; i&lt;array_length_1d(child_buttons); i++)
             {
-                active_children[i] = instance_create(x, y, child_buttons[i]);
-                active_children[i].x_gui = self.x_gui - (i+1);
-                active_children[i].y_gui = self.y_gui;
+                temp = instance_create(x - ((i+1) * 64), y, child_buttons[i]);
+                temp.order = i;
+                temp.parent = self;
+                temp.x_gui = self.x_gui - (i+1);
+                temp.y_gui = self.y_gui;
+                active_children[i] = temp;
             }
             obj_main.clicked_gui = true;
         }
         else
         {
-            for (i=0; i&lt;array_length_1d(active_children); i++)
+            selected = false;
+            show_debug_message("Clicked and already selected")
+            if (array_length_1d(active_children) &gt; 0)
             {
-                instance_destroy(active_children[i])
+                for (i=0; i&lt;array_length_1d(active_children); i++)
+                {
+                    instance_destroy(active_children[i])
+                }
             }
-            seleced = false;   
         }
+    }
+}
+
+//For all children, sets gui location relative to self
+if (selected)
+{
+    for (i = 0; i&lt;array_length_1d(active_children); i++)
+    {
+        active_children[i].x_gui = x - (i+1) * 64;
+        active_children[i].y_gui = y;
     }
 }
 
