@@ -74,13 +74,20 @@ y = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-
-var temp = sprite_get_name(object_get_sprite(global.selected_obj));
-draw_sprite(temp, 1, x+12, y + 30);
-
-draw_set_color(c_black);
-draw_text(x+64, y + 10, object_get_name(global.selected_obj));
+            <string>if (global.selected_obj_type == selected_obj_type_list.character)  //If a character is selected
+{
+    draw_self();
+    
+    //Writes info of selected object
+    var temp = global.selected_obj;
+    
+    var temp_sprite = temp.sprite_index;
+    draw_sprite(temp_sprite, 0, x+12, y + 30);
+    
+    draw_set_color(c_black);
+    var temp_name = temp.name;
+    draw_text(x+96, y + 10, global.selected_obj.name);
+}
 </string>
           </argument>
         </arguments>

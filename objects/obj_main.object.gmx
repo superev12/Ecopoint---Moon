@@ -36,6 +36,11 @@ enum tool_list  {                   //The tool the user has selected
     water_tank,
     oxygen_tank
 };
+enum selected_obj_type_list {            //The object type of the selected object
+    empty,
+    character
+};
+global.selected_obj_type = selected_obj_type_list.empty;    //Initially, nonetype selected
 
 global.tool_selected = tool_list.empty;
 clicked_gui = false;                 //Used to check if the user clicked the gui
@@ -179,10 +184,22 @@ if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
         build_module(floor(mouse_x/64), floor(mouse_y/64), module_types.oxygen_tank);
         global.tool_selected = tool_list.oxygen_tank;  
     }
-        else if (global.tool_selected == tool_list.food_tank)
+    else if (global.tool_selected == tool_list.food_tank)
     {
         build_module(floor(mouse_x/64), floor(mouse_y/64), module_types.food_tank);
         global.tool_selected = tool_list.food_tank;  
+    }
+    else
+    {
+        //No tool selected, so selection mode
+        if (instance_position(mouse_x, mouse_y, obj_character))
+        {
+            //If we click a character
+            global.selected_obj = instance_position(mouse_x, mouse_y, obj_character);
+            global.selected_obj_type = selected_obj_type_list.character;
+            show_debug_message("Selected character" + string(global.selected_obj));
+            show_debug_message("Sprite is" + string(global.selected_obj.sprite_index));
+        }
     }
 }
 
