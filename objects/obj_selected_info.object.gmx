@@ -82,7 +82,7 @@ y = 0;
     var temp = global.selected_obj;
     
     var temp_sprite = temp.sprite_index;
-    draw_sprite(temp_sprite, 0, x+12, y + 30);
+    draw_sprite_ext(temp_sprite, 0, x+14, y + 30, 4, 4, 0, c_white, 1);
     
     draw_set_color(c_black);
     var temp_name = temp.name;
