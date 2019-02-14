@@ -32,14 +32,14 @@ room_x = floor(x/64)*64;
 room_y = floor(x/64)*64;
 
 //Attributes
-name = "Survivor Kevin";
+name = "Survivor " + choose("Harry", "Vince", "Terry", "Kevin");
 
 //Stats
 food_level = 20;
 water_level = 20;
 tired_level = 20;
 
-displayTitle = choose("Harry", "Vince", "Terry");
+displayTitle = 
 
 alarm[0] =  global.alarmspeed;
 </string>
