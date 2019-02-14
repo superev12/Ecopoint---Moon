@@ -32,7 +32,7 @@ room_x = floor(x/64)*64;
 room_y = floor(x/64)*64;
 
 //Attributes
-name = "Survivor " + choose("Harry", "Vince", "Terry", "Kevin");
+name = "Survivor " + choose("Harry", "Vince", "Terry", "Kevin", "Bob");
 
 //Stats
 food_level = 20;
