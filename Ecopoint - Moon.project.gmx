@@ -89,19 +89,22 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\build_module.gml</script>
-    <script>scripts\create_room.gml</script>
-    <script>scripts\get_module_turns_alive.gml</script>
-    <script>scripts\get_room_turns_alive.gml</script>
-    <script>scripts\get_room_object.gml</script>
-    <script>scripts\get_space_module.gml</script>
-    <script>scripts\get_space_taken.gml</script>
-    <script>scripts\set_room_object.gml</script>
-    <script>scripts\set_space_module.gml</script>
-    <script>scripts\set_space_taken.gml</script>
-    <script>scripts\map_module_to_object.gml</script>
-    <script>scripts\count_characters_in_room.gml</script>
     <script>scripts\place_character.gml</script>
+    <scripts name="Rooms">
+      <script>scripts\get_module_turns_alive.gml</script>
+      <script>scripts\create_room.gml</script>
+      <script>scripts\build_module.gml</script>
+      <script>scripts\get_room_turns_alive.gml</script>
+      <script>scripts\get_room_object.gml</script>
+      <script>scripts\set_room_object.gml</script>
+      <script>scripts\get_space_module.gml</script>
+      <script>scripts\count_characters_in_room.gml</script>
+      <script>scripts\get_space_taken.gml</script>
+      <script>scripts\map_module_to_object.gml</script>
+      <script>scripts\set_space_taken.gml</script>
+      <script>scripts\set_space_module.gml</script>
+    </scripts>
+    <script>scripts\submit_production_request.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_character</object>

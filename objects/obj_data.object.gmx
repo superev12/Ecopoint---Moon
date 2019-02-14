@@ -49,6 +49,7 @@ enum module_types{
     food_tank
 };
 
+//Generate the grid that stores the data for rooms
 global.module_grid = ds_grid_create(32,32);
 
 for (i=0; i&lt;32; i++;)
@@ -56,7 +57,7 @@ for (i=0; i&lt;32; i++;)
     for (j=0; j&lt;32; j++;)
     {
         //show_debug_message(string(data_structure))
-        data_structure = ds_map_create()
+        data_structure = ds_map_create();
         data_structure[? data_slots.taken] = false;
         data_structure[? data_slots.module] = module_types.none;
         data_structure[? data_slots.room_turns_alive] = -1;
@@ -67,6 +68,17 @@ for (i=0; i&lt;32; i++;)
         show_debug_message(string(ds_grid_get(global.module_grid,i,j)))
     }
 }
+
+//Generate the priority queue for production requests
+enum priority_slots{
+    requesting_object,
+    resources_consumed,
+    resources_consumed_quantity,
+    resources_produced,
+    resources_produced_quantity
+};
+
+production_queue = ds_priority_create();
 
 show_debug_message(string(global.module_grid))
 

@@ -92,8 +92,25 @@ oxygen_tank_count = instance_number(obj_module_oxygen_tank);
 water_tank_count = instance_number(obj_module_water_tank);
 food_tank_count = instance_number(obj_module_food_tank);
 
-//gets number of active farms
-active_farms = 0;
+//Enums for resource definition
+enum resource_types{
+    food,
+    water,
+    oxygen,
+    power,
+    metal
+}
+
+//Defines production values for machines
+farm_resources_consumed[0] = resource_types.water;
+farm_resources_consumed_quantity[0] = 2;
+farm_resources_produced[0] = resource_types.food;
+farm_resources_produced_quantity[0] = 4;
+farm_resources_produced[1] = resource_types.oxygen;
+farm_resources_produced_quantity[1] = 2;
+
+
+//Generates resource requests for all modules
 for (i = 0; i &lt; 32; i++)
 {    
     for (j = 0; j &lt; 32; j++)
@@ -101,14 +118,19 @@ for (i = 0; i &lt; 32; i++)
         var temp = global.module_grid[# i, j];
         if temp[? data_slots.characters_in_room] &gt; 0 and temp[? data_slots.module] == module_types.farm
         {
-            active_farms += 1;
+            //Submit farm request
+            submit_production_request(temp[? data_slots.room_object], 3, farm_resources_consumed, farm_resources_consumed_quantity, farm_resources_produced, farm_resources_produced_quantity);
         }
     }
 }
 
 show_debug_message("Active farms: " +  string(active_farms));
 
+//Handles resource requests for all modules
 
+
+//Depreciated food ticking code
+/*
 oxygen_gain = 0;
 oxygen_loss = 0;
 food_gain = active_farms*4;
@@ -132,6 +154,7 @@ else
         food = 0;
     }
 }
+*/
 
 alarm[0] = global.alarmspeed;
 </string>
