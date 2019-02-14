@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(65, 218, string(obj_main.oxygen) + " / " + string(obj_main.oxygen_tank_count));
+draw_text(65, 218, string(obj_main.resources[resource_types.oxygen]) + " / " + string(obj_main.oxygen_tank_count));
 </string>
           </argument>
         </arguments>

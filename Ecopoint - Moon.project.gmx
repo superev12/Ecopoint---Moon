@@ -104,7 +104,10 @@
       <script>scripts\set_space_taken.gml</script>
       <script>scripts\set_space_module.gml</script>
     </scripts>
-    <script>scripts\submit_production_request.gml</script>
+    <scripts name="Production">
+      <script>scripts\submit_production_request.gml</script>
+      <script>scripts\handle_production_request.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_character</object>

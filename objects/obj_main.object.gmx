@@ -46,13 +46,22 @@ global.tool_selected = tool_list.empty;
 clicked_gui = false;                 //Used to check if the user clicked the gui
 
 //Initialise resource variables
+//Enums for resource definition
+enum resource_types{
+    food,
+    water,
+    oxygen,
+    metal
+}
+
 population_count = 0;
 farm_count = 0;
 oxygen_tank_count = 0;
 water_tank_count = 0;
-oxygen = 0;
-water = 0;
-food = 0;
+resources[resource_types.food] = 20;
+resources[resource_types.oxygen] = 20;
+resources[resource_types.water] = 20;
+resources[resource_types.metal] = 20;
 food_cap = 10
 
 alarm[0] =  global.alarmspeed;
@@ -92,15 +101,6 @@ oxygen_tank_count = instance_number(obj_module_oxygen_tank);
 water_tank_count = instance_number(obj_module_water_tank);
 food_tank_count = instance_number(obj_module_food_tank);
 
-//Enums for resource definition
-enum resource_types{
-    food,
-    water,
-    oxygen,
-    power,
-    metal
-}
-
 //Defines production values for machines
 farm_resources_consumed[0] = resource_types.water;
 farm_resources_consumed_quantity[0] = 2;
@@ -119,14 +119,21 @@ for (i = 0; i &lt; 32; i++)
         if temp[? data_slots.characters_in_room] &gt; 0 and temp[? data_slots.module] == module_types.farm
         {
             //Submit farm request
+            show_debug_message("attempting to submit production request");
             submit_production_request(temp[? data_slots.room_object], 3, farm_resources_consumed, farm_resources_consumed_quantity, farm_resources_produced, farm_resources_produced_quantity);
         }
     }
 }
 
-show_debug_message("Active farms: " +  string(active_farms));
+for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
+{
+    handle_production_request();
+}
+
+//show_debug_message("Active farms: " +  string(active_farms));
 
 //Handles resource requests for all modules
+
 
 
 //Depreciated food ticking code
