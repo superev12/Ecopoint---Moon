@@ -58,11 +58,23 @@ population_count = 0;
 farm_count = 0;
 oxygen_tank_count = 0;
 water_tank_count = 0;
+//Stores default resource capacities
+default_food_cap = 20;
+default_oxygen_cap = 20;
+default_water_cap = 20;
+//Stores capacities of different stores
+food_tank_capacity = 4;
+water_tank_capacity = 4;
+oxygen_tank_capacity = 4;
+//Array 'resources' stores the resource quantities
 resources[resource_types.food] = 20;
 resources[resource_types.oxygen] = 20;
 resources[resource_types.water] = 20;
 resources[resource_types.metal] = 20;
-food_cap = 10
+//Array 'resource_cap' stores the maximum quantities of resources (This updates, default resource quantities will not)
+resource_cap[resource_types.food] = default_food_cap;
+resource_cap[resource_types.oxygen] = default_oxygen_cap;
+resource_cap[resource_types.water] = default_water_cap;
 
 alarm[0] =  global.alarmspeed;
 audio_play_sound(snd_main_theme, 1, true);
@@ -187,6 +199,12 @@ alarm[0] = global.alarmspeed;
           <argument>
             <kind>1</kind>
             <string>//show_debug_message("clicked_gui is" + string(clicked_gui))
+//Counts resource storage
+resource_cap[resource_types.food] = default_food_cap + food_tank_capacity * instance_number(obj_module_food_tank);
+resource_cap[resource_types.oxygen] = default_oxygen_cap + oxygen_tank_capacity * instance_number(obj_module_oxygen_tank);
+resource_cap[resource_types.water] = default_water_cap + water_tank_capacity * instance_number(obj_module_water_tank);
+
+//Handles left click
 if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
 {
     show_debug_message("Clicked at (" + string(mouse_x) + ", " + string(mouse_y) + ")")

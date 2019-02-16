@@ -10,12 +10,21 @@ enough_resources = true;
 for (i=0; i < array_length_1d(resources_consumed); i++)
 {
     resource_requested = resources_consumed[i];
-    if(obj_main.resources[resource_requested] < resources_consumed_quantity[i])
+    if (obj_main.resources[resource_requested] < resources_consumed_quantity[i])
     {
         enough_resources = false;
     }
 }
-if (enough_resources)
+enough_space = true;
+for (i=0; i < array_length_1d(resources_produced); i++)
+{
+    resource_pending = resources_produced[i];
+    if (obj_main.resources[resource_pending] == obj_main.resource_cap[resource_pending])
+    {
+        enough_space = false;
+    }
+}
+if (enough_resources and enough_space)
 {
     for (i=0; i < array_length_1d(resources_consumed); i++)
     {
@@ -25,6 +34,13 @@ if (enough_resources)
     for (i=0; i < array_length_1d(resources_produced); i++)
     {
         resource_produced = resources_produced[i];
-        obj_main.resources[resource_produced] += resources_produced_quantity[i];
-    }
+        if (obj_main.resources[resource_produced] + resources_produced_quantity[i] > obj_main.resource_cap[resource_produced])
+        {
+            obj_main.resources[resource_produced] = obj_main.resource_cap[resource_produced];
+        }
+        else
+        {
+            obj_main.resources[resource_produced] += resources_produced_quantity[i];
+        }
+    }   
 }
