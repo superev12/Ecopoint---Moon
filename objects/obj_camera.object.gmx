@@ -95,8 +95,10 @@ if (mouse_check_button_pressed(mb_left))
 if (mouse_wheel_up())
 {
     //Zoom in
-    view_xview[0] = mouse_x - 0.4 * view_wview[0];
-    view_yview[0] = mouse_y - 0.4 * view_hview[0];
+    x_ratio = window_mouse_get_x() / view_wview[0]
+    y_ratio = window_mouse_get_y() / view_hview[0]
+    view_xview[0] = x_ratio * view_wview[0] * 0.8 + view_xview[0];
+    view_yview[0] = y_ratio * view_hview[0] * 0.8 + view_yview[0];
     view_wview[0] *= 0.8;
     view_hview[0] *= 0.8;
     
@@ -105,8 +107,10 @@ if (mouse_wheel_up())
 if (mouse_wheel_down())
 {
     //Zoom out
-    view_xview[0] = mouse_x - 0.6 * view_wview[0];
-    view_yview[0] = mouse_y - 0.6 * view_hview[0];
+    x_ratio = window_mouse_get_x() / view_wview[0]
+    y_ratio = window_mouse_get_y() / view_hview[0]
+    view_xview[0] = x_ratio * view_wview[0] * 1.2 + view_xview[0];
+    view_yview[0] = y_ratio * view_hview[0] * 1.2 + view_yview[0];
     view_wview[0] *= 1.2;
     view_hview[0] *= 1.2;
     
