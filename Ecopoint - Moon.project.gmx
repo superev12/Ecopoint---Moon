@@ -161,8 +161,6 @@
       <object>objects\obj_selected_info</object>
       <object>objects\obj_toolbar</object>
     </objects>
-    <object>objects\debug_helper</object>
-    <object>objects\debug_helper_2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
