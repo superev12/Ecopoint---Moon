@@ -51,3 +51,8 @@ if (enough_resources)
         }
     }   
 }
+
+//Returns 2d array of resources lost
+return_lost[0] = resources_wasted;
+return_lost[1] = resources_wasted_quantity;
+return return_lost;
