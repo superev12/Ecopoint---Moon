@@ -6,6 +6,10 @@ resources_consumed_quantity = temp[? priority_slots.resources_consumed_quantity]
 resources_produced = temp[? priority_slots.resources_produced]
 resources_produced_quantity = temp[? priority_slots.resources_produced_quantity];
 
+var resources_wasted;
+var resources_wasted_quantity;
+var resources_wasted_counter = 0;
+
 enough_resources = true;
 for (i=0; i < array_length_1d(resources_consumed); i++)
 {
@@ -19,12 +23,15 @@ enough_space = true;
 for (i=0; i < array_length_1d(resources_produced); i++)
 {
     resource_pending = resources_produced[i];
-    if (obj_main.resources[resource_pending] == obj_main.resource_cap[resource_pending])
+    if (obj_main.resources[resource_pending] + resources_produced_quantity[i] > obj_main.resource_cap[resource_pending])
     {
         enough_space = false;
+        resources_wasted[resources_wasted_counter] = resources_produced[i]
+        resources_wasted_quantity[resources_wasted_counter] = obj_main.resources[resource_pending] + resources_produced_quantity[i] - obj_main.resource_cap[resource_pending];
+        resources_wasted_counter++;
     }
 }
-if (enough_resources and enough_space)
+if (enough_resources)
 {
     for (i=0; i < array_length_1d(resources_consumed); i++)
     {
