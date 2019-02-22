@@ -76,6 +76,24 @@ resource_cap[resource_types.food] = default_food_cap;
 resource_cap[resource_types.oxygen] = default_oxygen_cap;
 resource_cap[resource_types.water] = default_water_cap;
 
+//Defines production values for machines
+farm_resources_consumed[0] = resource_types.water;
+farm_resources_consumed_quantity[0] = 2;
+farm_resources_produced[0] = resource_types.food;
+farm_resources_produced_quantity[0] = 4;
+farm_resources_produced[1] = resource_types.oxygen;
+farm_resources_produced_quantity[1] = 2;
+
+//Defined production values for characters
+char_resources_consumed[0] = resource_types.food;
+char_resources_consumed_quantity[0] = 1;
+char_resources_consumed[1] = resource_types.water;
+char_resources_consumed_quantity[1] = 1;
+char_resources_consumed[2] = resource_types.oxygen;
+char_resources_consumed_quantity[2] = 1;
+char_resources_produced[0] = resource_types.water;
+char_resources_produced_quantity[0] = 1;
+
 alarm[0] =  global.alarmspeed;
 audio_play_sound(snd_main_theme, 1, true);
 audio_master_gain(0);
@@ -113,15 +131,6 @@ oxygen_tank_count = instance_number(obj_module_oxygen_tank);
 water_tank_count = instance_number(obj_module_water_tank);
 food_tank_count = instance_number(obj_module_food_tank);
 
-//Defines production values for machines
-farm_resources_consumed[0] = resource_types.water;
-farm_resources_consumed_quantity[0] = 2;
-farm_resources_produced[0] = resource_types.food;
-farm_resources_produced_quantity[0] = 4;
-farm_resources_produced[1] = resource_types.oxygen;
-farm_resources_produced_quantity[1] = 2;
-
-
 //Generates resource requests for all modules
 for (i = 0; i &lt; 32; i++)
 {    
@@ -136,10 +145,16 @@ for (i = 0; i &lt; 32; i++)
         }
     }
 }
+//Generates resource requests for characters
+for (i = 0; i &lt; instance_number(obj_character); i++)
+{
+    submit_production_request(instance_find(obj_character, i), 1, char_resources_consumed, char_resources_consumed_quantity, char_resources_produced, char_resources_produced_quantity);
+}
 
+//Handles all requests
 for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
 {
-    handle_production_request();
+    show_debug_message("Handle request results: " + string(handle_production_request()));
 }
 
 //show_debug_message("Active farms: " +  string(active_farms));

@@ -7,8 +7,12 @@ resources_produced = temp[? priority_slots.resources_produced]
 resources_produced_quantity = temp[? priority_slots.resources_produced_quantity];
 
 var resources_wasted;
+resources_wasted[0] = 0;
 var resources_wasted_quantity;
+resources_wasted_quantity[0] = 0;
 var resources_wasted_counter = 0;
+
+var success = true;
 
 enough_resources = true;
 for (i=0; i < array_length_1d(resources_consumed); i++)
@@ -51,8 +55,21 @@ if (enough_resources)
         }
     }   
 }
+else
+{
+    success = false;
+    
+}
 
 //Returns 2d array of resources lost
+
+
+
 return_lost[0] = resources_wasted;
 return_lost[1] = resources_wasted_quantity;
-return return_lost;
+
+return_array[0] = requesting_object;
+return_array[1] = success;
+return_array[2] = return_lost;
+
+return return_array;
