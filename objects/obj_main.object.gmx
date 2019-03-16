@@ -162,7 +162,27 @@ for (i = 0; i &lt; instance_number(obj_character); i++)
 //Handles all requests
 for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
 {
-    show_debug_message("Handle request results: " + string(handle_production_request()));
+    request_results = handle_production_request();
+    show_debug_message("Handle request results: " + string(request_results));
+    show_debug_message("Raw: " + string(request_results[0]));
+    //show_debug_message(".object_index" + string(request_results[0].object_index));
+    //show_debug_message("get_name " + string(object_get_name(request_results[0])));
+    show_debug_message("get_name(.object_index) " + string(object_get_name(request_results[0].object_index)));
+    //Special handling for characters
+    if (object_get_name(request_results[0].object_index) == "obj_character")
+    {
+        show_debug_message("Recognised " + string(request_results[0]) + " as character.")
+        if (request_results[1])
+        {
+            temp_input = request_results[3];
+            temp_input_consumed = temp_input[0]
+            request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] = request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])];
+        }
+        else
+        {
+            request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] -= 1;
+        }
+    }
 }
 
 //show_debug_message("Active farms: " +  string(active_farms));

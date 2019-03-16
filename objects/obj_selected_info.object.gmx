@@ -85,8 +85,12 @@ y = 0;
     draw_sprite_ext(temp_sprite, 0, x+14, y + 30, 4, 4, 0, c_white, 1);
     
     draw_set_color(c_black);
-    var temp_name = temp.name;
     draw_text(x+96, y + 10, global.selected_obj.name);
+
+    draw_text(x+96, y + 26, "Food: " + string(global.selected_obj.stats_values[stats.food]));
+    draw_text(x+96, y + 42, "Water: " + string(global.selected_obj.stats_values[stats.water]));
+    draw_text(x+96, y + 58, "Oxygen: " + string(global.selected_obj.stats_values[stats.oxygen]));
+    draw_text(x+96, y + 74, "Tiredness: " + string(global.selected_obj.stats_values[stats.tired]));
 }
 </string>
           </argument>

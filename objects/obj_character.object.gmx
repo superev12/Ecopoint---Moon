@@ -35,13 +35,26 @@ room_y = floor(x/64)*64;
 name = "Survivor " + choose("Harry", "Vince", "Terry", "Kevin", "Bob");
 
 //Stats
-food_level = 20;
-water_level = 20;
-tired_level = 20;
+enum stats {
+    food,
+    water,
+    oxygen,
+    tired
+};
+
+
+stats_values_cap[stats.food] = 4;
+stats_values[stats.food] = stats_values_cap[stats.food];
+stats_values_cap[stats.water] = 2
+stats_values[stats.water] = stats_values_cap[stats.water];
+stats_values_cap[stats.oxygen] = 1;
+stats_values[stats.oxygen] = stats_values_cap[stats.oxygen];
+stats_values_cap[stats.tired] = 4;
+stats_values[stats.tired] = stats_values_cap[stats.tired];
 
 displayTitle = 
 
-alarm[0] =  global.alarmspeed;
+alarm[0] = global.alarmspeed;
 </string>
           </argument>
         </arguments>

@@ -108,6 +108,7 @@
       <script>scripts\submit_production_request.gml</script>
       <script>scripts\handle_production_request.gml</script>
     </scripts>
+    <script>scripts\map_resources_to_stats.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_character</object>
