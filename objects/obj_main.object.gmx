@@ -48,6 +48,7 @@ clicked_gui = false;                 //Used to check if the user clicked the gui
 //Initialise resource variables
 //Enums for resource definition
 enum resource_types{
+    none,
     food,
     water,
     oxygen,
@@ -67,6 +68,7 @@ food_tank_capacity = 4;
 water_tank_capacity = 4;
 oxygen_tank_capacity = 4;
 //Array 'resources' stores the resource quantities
+resources[resource_types.none] =  0;
 resources[resource_types.food] = 20;
 resources[resource_types.oxygen] = 20;
 resources[resource_types.water] = 20;
@@ -85,14 +87,18 @@ farm_resources_produced[1] = resource_types.oxygen;
 farm_resources_produced_quantity[1] = 2;
 
 //Defined production values for characters
-char_resources_consumed[0] = resource_types.food;
-char_resources_consumed_quantity[0] = 1;
-char_resources_consumed[1] = resource_types.water;
-char_resources_consumed_quantity[1] = 1;
-char_resources_consumed[2] = resource_types.oxygen;
-char_resources_consumed_quantity[2] = 1;
-char_resources_produced[0] = resource_types.water;
-char_resources_produced_quantity[0] = 1;
+char_eating_resources_consumed[0] = resource_types.food;
+char_eating_resources_consumed_quantity[0] = 1;
+char_eating_resources_produced[0] = resource_types.none;
+char_eating_resources_produced_quantity[0] = 0;
+char_drinking_resources_consumed[0] = resource_types.water;
+char_drinking_resources_consumed_quantity[0] = 1;
+char_drinking_resources_produced[0] = resource_types.none;
+char_drinking_resources_produced_quantity[0] = 0;
+char_breathing_resources_consumed[0] = resource_types.oxygen;
+char_breathing_resources_consumed_quantity[0] = 1;
+char_breathing_resources_produced[0] = resource_types.none;
+char_breathing_resources_produced_quantity[0] = 0;
 
 alarm[0] =  global.alarmspeed;
 audio_play_sound(snd_main_theme, 1, true);
@@ -148,7 +154,9 @@ for (i = 0; i &lt; 32; i++)
 //Generates resource requests for characters
 for (i = 0; i &lt; instance_number(obj_character); i++)
 {
-    submit_production_request(instance_find(obj_character, i), 1, char_resources_consumed, char_resources_consumed_quantity, char_resources_produced, char_resources_produced_quantity);
+    submit_production_request(instance_find(obj_character, i), 1, char_eating_resources_consumed, char_eating_resources_consumed_quantity, char_eating_resources_produced, char_eating_resources_produced_quantity);
+    submit_production_request(instance_find(obj_character, i), 1, char_drinking_resources_consumed, char_drinking_resources_consumed_quantity, char_drinking_resources_produced, char_drinking_resources_produced_quantity);
+    submit_production_request(instance_find(obj_character, i), 1, char_breathing_resources_consumed, char_breathing_resources_consumed_quantity, char_breathing_resources_produced, char_breathing_resources_produced_quantity);
 }
 
 //Handles all requests
