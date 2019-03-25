@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.alarmspeed = room_speed * 5; //Length of turns
-global.transparency = 0.3;           //Degree of transparency for queued builds
+global.transparency = 0.3;          //Degree of transparency for queued builds
 global.cameraspeed = 5;             //The speed the camera scrolls
 enum tool_list  {                   //The tool the user has selected
     empty,
@@ -131,7 +131,7 @@ window_y = window_get_y();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>population_count = instance_number(obj_character);
+            <string> population_count = instance_number(obj_character);
 farm_count = instance_number(obj_module_farm);
 oxygen_tank_count = instance_number(obj_module_oxygen_tank);
 water_tank_count = instance_number(obj_module_water_tank);
@@ -171,14 +171,14 @@ for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
     //Special handling for characters
     if (object_get_name(request_results[0].object_index) == "obj_character")
     {
+        temp_input = request_results[3];
+        temp_input_consumed = temp_input[0];
         show_debug_message("Recognised " + string(request_results[0]) + " as character.")
         if (request_results[1])
         {
-            temp_input = request_results[3];
-            temp_input_consumed = temp_input[0]
             request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] = request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])];
         }
-        else
+        else if (request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] &gt; 0)
         {
             request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] -= 1;
         }
