@@ -32,7 +32,7 @@ room_x = floor(x/64)*64;
 room_y = floor(x/64)*64;
 
 //Attributes
-name = "Survivor " + choose("Harry", "Vince", "Terry", "Kevin", "Bob");
+name = "Survivor " + choose("Harry", "Vince", "Terry", "Kevin", "Bob","Generic white male");
 
 //Stats
 enum stats {

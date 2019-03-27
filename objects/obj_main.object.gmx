@@ -131,7 +131,7 @@ window_y = window_get_y();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string> population_count = instance_number(obj_character);
+            <string>population_count = instance_number(obj_character);
 farm_count = instance_number(obj_module_farm);
 oxygen_tank_count = instance_number(obj_module_oxygen_tank);
 water_tank_count = instance_number(obj_module_water_tank);
