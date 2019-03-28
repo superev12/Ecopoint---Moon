@@ -167,20 +167,23 @@ for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
     show_debug_message("Raw: " + string(request_results[0]));
     //show_debug_message(".object_index" + string(request_results[0].object_index));
     //show_debug_message("get_name " + string(object_get_name(request_results[0])));
-    show_debug_message("get_name(.object_index) " + string(object_get_name(request_results[0].object_index)));
+    //show_debug_message("get_name(.object_index) " + string(object_get_name(request_results[0].object_index)));
     //Special handling for characters
-    if (object_get_name(request_results[0].object_index) == "obj_character")
+    if (instance_exists(request_results[0]))
     {
-        temp_input = request_results[3];
-        temp_input_consumed = temp_input[0];
-        show_debug_message("Recognised " + string(request_results[0]) + " as character.")
-        if (request_results[1])
+        if (object_get_name(request_results[0].object_index) == "obj_character")
         {
-            request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] = request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])];
-        }
-        else if (request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] &gt; 0)
-        {
-            request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] -= 1;
+            temp_input = request_results[3];
+            temp_input_consumed = temp_input[0];
+            show_debug_message("Recognised " + string(request_results[0]) + " as character.")
+            if (request_results[1])
+            {
+                request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] = request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])];
+            }
+            else if (request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] &gt; 0)
+            {
+                request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] -= 1;
+            }
         }
     }
 }

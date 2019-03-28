@@ -80,6 +80,7 @@
       <sprite>sprites\spr_char3</sprite>
       <sprite>sprites\spr_char4</sprite>
       <sprite>sprites\spr_char5</sprite>
+      <sprite>sprites\spr_corpse</sprite>
     </sprites>
     <sprite>sprites\spr_camera</sprite>
     <sprite>sprites\spr_main</sprite>
@@ -162,6 +163,7 @@
       <object>objects\obj_selected_info</object>
       <object>objects\obj_toolbar</object>
     </objects>
+    <object>objects\obj_corpse</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>

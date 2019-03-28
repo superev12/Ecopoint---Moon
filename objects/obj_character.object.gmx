@@ -35,7 +35,8 @@ room_y = floor(x/64)*64;
 name = "Survivor " + choose("Harry", "Vince", "Terry", "Kevin", "Bob","Generic white male");
 
 //Stats
-enum stats {
+enum stats 
+{
     food,
     water,
     oxygen,
@@ -119,6 +120,34 @@ if (mouse_check_button_pressed(mb_left))
         place_character(mouse_x, mouse_y, self);  
         picked = false
     }
+}
+
+//Character dies if needs are not met
+if (stats_values[stats.food] &lt;= 0)
+{
+    my_body = instance_create(x, y, obj_corpse);
+    my_body.name = "The late " + name;
+    my_body.cause_of_death = stats.food;
+    instance_destroy(self.id);
+}
+else if (stats_values[stats.water] &lt;= 0)
+{
+    my_body = instance_create(x, y, obj_corpse);
+    my_body.name = "The late " + name;
+    my_body.cause_of_death = stats.water;
+    instance_destroy(self.id);
+}
+else if (stats_values[stats.oxygen] &lt;= 0)
+{
+    my_body = instance_create(x, y, obj_corpse);
+    my_body.name = "The late " + name;
+    my_body.cause_of_death = stats.oxygen;
+    instance_destroy(self.id);
+}
+else if (stats_values[stats.tired] &lt;= 0)
+{
+    //To do - add fainted of exhausation state!
+    show_debug_message(name + " is exhausted!");
 }
 </string>
           </argument>
