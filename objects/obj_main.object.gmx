@@ -164,8 +164,19 @@ for (i = 0; i &lt; instance_number(obj_character); i++)
 for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
 {
     request_results = handle_production_request();
-    show_debug_message("Handle request results: " + string(request_results));
-    show_debug_message("Raw: " + string(request_results[0]));
+    request_results_input = request_results[3];
+    if (request_results_input[0] == resource_types.food)
+    {
+        show_debug_message(request_results[0].object_index + " requests " + string(request_results_input[1]) + " food")
+    }
+    else if (request_results_input[0] == resource_types.water)
+    {
+        show_debug_message(request_results[0].object_index + " requests " + string(request_results_input[1]) + " water")
+    }
+    else if (request_results_input[0] == resource_types.oxygen)
+    {
+        show_debug_message(request_results[0].object_index + " requests " + string(request_results_input[1]) + " oxygen")
+    }
     //show_debug_message(".object_index" + string(request_results[0].object_index));
     //show_debug_message("get_name " + string(object_get_name(request_results[0])));
     //show_debug_message("get_name(.object_index) " + string(object_get_name(request_results[0].object_index)));
