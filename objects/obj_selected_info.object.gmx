@@ -94,7 +94,35 @@ y = 0;
         draw_text(x+96, y + 58, "Oxygen: " + string(global.selected_obj.stats_values[stats.oxygen]));
         draw_text(x+96, y + 74, "Tiredness: " + string(global.selected_obj.stats_values[stats.tired]));
     }
+    else if (global.selected_obj_type == selected_obj_type_list.corpse)
+    {
+        draw_self();
+        //Writes info of selected object
+        var temp = global.selected_obj;
+        
+        var temp_sprite = temp.sprite_index;
+        draw_sprite_ext(temp_sprite, 0, x+14, y + 30, 4, 4, 0, c_white, 1);
+        
+        draw_set_color(c_black);
+        draw_text(x+96, y + 10, global.selected_obj.name);
+        
+        if (temp.cause_of_death == stats.food)
+        {
+            draw_text(x+96, y + 26, "Died of starvation");
+        }
+        else if (temp.cause_of_death == stats.water)
+        {
+            draw_text(x+96, y + 26, "Died of dehydration");
+        }
+        else if (temp.cause_of_death == stats.oxygen)
+        {
+            draw_text(x+96, y + 26, "Died of asphyxiation");
+        }
+    }
 }
+
+//Reverts text colour change
+draw_set_colour(c_white)
 </string>
           </argument>
         </arguments>

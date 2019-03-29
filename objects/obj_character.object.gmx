@@ -128,6 +128,12 @@ if (stats_values[stats.food] &lt;= 0)
     my_body = instance_create(x, y, obj_corpse);
     my_body.name = "The late " + name;
     my_body.cause_of_death = stats.food;
+    if (global.selected_obj == self.id)
+    {
+        //If this character is selected upon death
+        global.selected_obj = my_body;
+        global.selected_obj_type = selected_obj_type_list.corpse;
+    }
     instance_destroy(self.id);
 }
 else if (stats_values[stats.water] &lt;= 0)
@@ -135,6 +141,12 @@ else if (stats_values[stats.water] &lt;= 0)
     my_body = instance_create(x, y, obj_corpse);
     my_body.name = "The late " + name;
     my_body.cause_of_death = stats.water;
+    if (global.selected_obj == self.id)
+    {
+        //If this character is selected upon death
+        global.selected_obj = my_body;
+        global.selected_obj_type = selected_obj_type_list.corpse;
+    }
     instance_destroy(self.id);
 }
 else if (stats_values[stats.oxygen] &lt;= 0)
@@ -142,6 +154,12 @@ else if (stats_values[stats.oxygen] &lt;= 0)
     my_body = instance_create(x, y, obj_corpse);
     my_body.name = "The late " + name;
     my_body.cause_of_death = stats.oxygen;
+    if (global.selected_obj == self.id)
+    {
+        //If this character is selected upon death
+        global.selected_obj = my_body;
+        global.selected_obj_type = selected_obj_type_list.corpse;
+    }
     instance_destroy(self.id);
 }
 else if (stats_values[stats.tired] &lt;= 0)

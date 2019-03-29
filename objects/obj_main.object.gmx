@@ -38,7 +38,8 @@ enum tool_list  {                   //The tool the user has selected
 };
 enum selected_obj_type_list {            //The object type of the selected object
     empty,
-    character
+    character,
+    corpse
 };
 global.selected_obj_type = selected_obj_type_list.empty;    //Initially, nonetype selected
 
@@ -291,6 +292,14 @@ if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
             //If we click a character
             global.selected_obj = instance_position(mouse_x, mouse_y, obj_character);
             global.selected_obj_type = selected_obj_type_list.character;
+            show_debug_message("Selected character" + string(global.selected_obj));
+            show_debug_message("Sprite is" + string(global.selected_obj.sprite_index));
+        }
+        else if (instance_position(mouse_x, mouse_y, obj_corpse))
+        {
+            //If we click a corpse
+            global.selected_obj = instance_position(mouse_x, mouse_y, obj_corpse);
+            global.selected_obj_type = selected_obj_type_list.corpse;
             show_debug_message("Selected character" + string(global.selected_obj));
             show_debug_message("Sprite is" + string(global.selected_obj.sprite_index));
         }
