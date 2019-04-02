@@ -4,6 +4,7 @@ rooms_min = argument1;
 number_of_rooms = floor(random_range(rooms_max, rooms_min));
 
 show_debug_message("Generating Map...");
+//Places rooms
 create_room(15, 15, true);
 possible_locations_x = ds_list_create()
 possible_locations_y = ds_list_create()
@@ -47,4 +48,6 @@ while (rooms_placed <= number_of_rooms)
     }
     
 }
+
+//Places modules
 
