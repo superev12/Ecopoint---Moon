@@ -160,26 +160,14 @@ for (i = 0; i &lt; instance_number(obj_character); i++)
     submit_production_request(instance_find(obj_character, i), 1, char_breathing_resources_consumed, char_breathing_resources_consumed_quantity, char_breathing_resources_produced, char_breathing_resources_produced_quantity);
 }
 
+show_debug_message("There are " + string(ds_priority_size(obj_data.production_queue)) + " requests in the queue");
+
 //Handles all requests
-for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
+number_of_requests = ds_priority_size(obj_data.production_queue);
+for (i = 0; i &lt; number_of_requests; i++)
 {
     request_results = handle_production_request();
     request_results_input = request_results[3];
-    if (request_results_input[0] == resource_types.food)
-    {
-        show_debug_message(request_results[0].object_index + " requests " + string(request_results_input[1]) + " food")
-    }
-    else if (request_results_input[0] == resource_types.water)
-    {
-        show_debug_message(request_results[0].object_index + " requests " + string(request_results_input[1]) + " water")
-    }
-    else if (request_results_input[0] == resource_types.oxygen)
-    {
-        show_debug_message(request_results[0].object_index + " requests " + string(request_results_input[1]) + " oxygen")
-    }
-    //show_debug_message(".object_index" + string(request_results[0].object_index));
-    //show_debug_message("get_name " + string(object_get_name(request_results[0])));
-    //show_debug_message("get_name(.object_index) " + string(object_get_name(request_results[0].object_index)));
     //Special handling for characters
     if (instance_exists(request_results[0]))
     {
@@ -187,7 +175,6 @@ for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
         {
             temp_input = request_results[3];
             temp_input_consumed = temp_input[0];
-            show_debug_message("Recognised " + string(request_results[0]) + " as character.")
             if (request_results[1])
             {
                 request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])] = request_results[0].stats_values[map_resources_to_stats(temp_input_consumed[0])];
@@ -200,39 +187,8 @@ for (i = 0; i &lt; ds_priority_size(obj_data.production_queue); i++)
     }
 }
 
-//show_debug_message("Active farms: " +  string(active_farms));
-
-//Handles resource requests for all modules
-
-
-
-//Depreciated food ticking code
-/*
-oxygen_gain = 0;
-oxygen_loss = 0;
-food_gain = active_farms*4;
-food_loss = population_count;
-water_gain = 0;
-water_loss = farm_count;
-food_cap = 10 + food_tank_count * 8
-
-if (food + food_gain - food_loss &lt;= food_cap) and (food + food_gain - food_loss &gt;= 0)
-{
-    food = food + food_gain - food_loss;
-}
-else
-{
-    if (food + food_gain - food_loss &gt; food_cap)
-    {
-        food = food_cap;
-    }
-    else
-    {
-        food = 0;
-    }
-}
-*/
-
+ds_priority_clear(obj_data.production_queue)
+show_debug_message("End of turn")
 alarm[0] = global.alarmspeed;
 </string>
           </argument>
