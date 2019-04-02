@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>depth = -10000;
+
+//Centers camera
+view_xview[0] = room_width / 2 - view_wview / 2
+view_yview[0] = room_height / 2 - view_hview / 2
 </string>
           </argument>
         </arguments>

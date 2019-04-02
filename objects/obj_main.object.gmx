@@ -112,7 +112,7 @@ window_x = window_get_x();
 window_y = window_get_y();
 
 //Generate map
-generate_map()
+generate_map(1,20)
 </string>
           </argument>
         </arguments>
