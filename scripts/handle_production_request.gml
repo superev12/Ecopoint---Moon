@@ -78,18 +78,4 @@ return_array[1] = success;
 return_array[2] = return_lost;
 return_array[3] = return_input;
 
-if (resources_consumed[0] == resource_types.food)
-{
-    show_debug_message(requesting_object.name + "'s request for " + string(resources_consumed_quantity[0]) + " food was handled")
-}
-    else if (resources_consumed[0] == resource_types.water)
-{
-    show_debug_message(requesting_object.name + "'s request for " + string(resources_consumed_quantity[0]) + " water was handled")
-}
-else if (resources_consumed[0] == resource_types.oxygen)
-{
-    show_debug_message(requesting_object.name + "'s request for " + string(resources_consumed_quantity[0]) + " oxygen was handled")
-}
-//show_debug_message(requesting_object.name + "'s request for " + string(resources_consumed_quantity[0]))
-
 return return_array;
