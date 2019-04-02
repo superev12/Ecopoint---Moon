@@ -82,9 +82,6 @@ production_queue = ds_priority_create();
 
 show_debug_message(string(global.module_grid))
 
-set_space_taken(4, 3, true);
-set_room_object(4, 3, instance_find(obj_module_blank_floor, 0))
-
 
 /*
 var z;

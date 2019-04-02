@@ -110,6 +110,9 @@ window_w = window_get_width();
 window_h = window_get_height();
 window_x = window_get_x();
 window_y = window_get_y();
+
+//Generate map
+generate_map()
 </string>
           </argument>
         </arguments>
@@ -228,7 +231,7 @@ if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
     if (global.tool_selected = tool_list.build)
     {
         show_debug_message("Grid location: (" + string(floor(mouse_x/64)) + ", " + string(floor(mouse_y/64)) + ")")
-        create_room(floor(mouse_x/64), floor(mouse_y/64));
+        create_room(floor(mouse_x/64), floor(mouse_y/64), false);
     }
     else if (global.tool_selected = tool_list.food) and (get_space_taken(floor(mouse_x/64), floor(mouse_y/64)))
     {
