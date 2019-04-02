@@ -44,7 +44,7 @@ if (n % 64 == median(4, n % 64, 23)) and bottomrow = false
         show_debug_message("Character in this position");
     }
     else {
-        n = floor(n/64)*64 + 7
+        n = floor(n/64)*64 + 7;
     }
 }
 else if (n % 64 == median(24, n % 64, 39)) and bottomrow = false
@@ -55,7 +55,7 @@ else if (n % 64 == median(24, n % 64, 39)) and bottomrow = false
         show_debug_message("Character in this position");
     } 
     else {
-        n = floor(n/64)*64 + 24
+        n = floor(n/64)*64 + 24;
     }
 }
 else if (n % 64 == median(40, n % 64, 59)) and bottomrow = false
@@ -66,7 +66,7 @@ else if (n % 64 == median(40, n % 64, 59)) and bottomrow = false
         show_debug_message("Character in this position");
     }
     else {
-        n = floor(n/64)*64 + 40
+        n = floor(n/64)*64 + 40;
     }
 }
 
