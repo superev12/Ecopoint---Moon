@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.alarmspeed = room_speed * 5; //Length of turns
+            <string>randomize();
+global.alarmspeed = room_speed * 5; //Length of turns
 global.transparency = 0.3;          //Degree of transparency for queued builds
 global.cameraspeed = 5;             //The speed the camera scrolls
 enum tool_list  {                   //The tool the user has selected

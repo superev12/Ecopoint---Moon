@@ -1,7 +1,7 @@
 ///generate_map(rooms_max, rooms_min)
 rooms_max = argument0;
 rooms_min = argument1;
-number_of_rooms = floor(random_range(rooms_max, rooms_min));
+number_of_rooms = irandom(rooms_max);
 
 show_debug_message("Generating Map...");
 //Places rooms
