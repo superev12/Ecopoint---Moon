@@ -32,6 +32,7 @@ global.cameraspeed = 5;             //The speed the camera scrolls
 enum tool_list  {                   //The tool the user has selected
     empty,
     build,
+    delete,
     food,
     food_tank,
     water_tank,

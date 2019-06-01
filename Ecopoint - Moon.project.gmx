@@ -51,12 +51,22 @@
       <sprite>sprites\spr_door_up</sprite>
     </sprites>
     <sprites name="UI">
-      <sprite>sprites\spr_buildchoice_selected</sprite>
+      <sprites name="machines">
+        <sprite>sprites\spr_foodchoice_selected</sprite>
+        <sprite>sprites\spr_foodchoice</sprite>
+      </sprites>
       <sprite>sprites\spr_buildchoice</sprite>
+      <sprite>sprites\spr_buildchoice_selected</sprite>
+      <sprite>sprites\spr_deletechoice</sprite>
+      <sprite>sprites\spr_deletechoice_selected</sprite>
       <sprite>sprites\spr_farm_resource</sprite>
-      <sprite>sprites\spr_water_resource</sprite>
+      <sprite>sprites\spr_machinechoice</sprite>
+      <sprite>sprites\spr_machinechoice_selected</sprite>
       <sprite>sprites\spr_oxygen_resource</sprite>
       <sprite>sprites\spr_selected_info</sprite>
+      <sprite>sprites\spr_storagechoice</sprite>
+      <sprite>sprites\spr_storagechoice_selected</sprite>
+      <sprite>sprites\spr_water_resource</sprite>
       <sprites name="storage">
         <sprite>sprites\spr_waterstoragechoice_selected</sprite>
         <sprite>sprites\spr_waterstoragechoice</sprite>
@@ -65,14 +75,6 @@
         <sprite>sprites\spr_foodstoragechoice_selected</sprite>
         <sprite>sprites\spr_foodstoragechoice</sprite>
       </sprites>
-      <sprites name="machines">
-        <sprite>sprites\spr_foodchoice_selected</sprite>
-        <sprite>sprites\spr_foodchoice</sprite>
-      </sprites>
-      <sprite>sprites\spr_storagechoice_selected</sprite>
-      <sprite>sprites\spr_machinechoice_selected</sprite>
-      <sprite>sprites\spr_machinechoice</sprite>
-      <sprite>sprites\spr_storagechoice</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_char1</sprite>
@@ -104,6 +106,7 @@
       <script>scripts\map_module_to_object.gml</script>
       <script>scripts\set_space_taken.gml</script>
       <script>scripts\set_space_module.gml</script>
+      <script>scripts\destroy_room.gml</script>
     </scripts>
     <scripts name="Production">
       <script>scripts\submit_production_request.gml</script>
@@ -157,6 +160,7 @@
         <object>objects\obj_button</object>
         <object>objects\obj_storageselect</object>
         <object>objects\obj_machineselect</object>
+        <object>objects\obj_deleteselect</object>
       </objects>
       <object>objects\obj_food_resource</object>
       <object>objects\obj_water_resource</object>

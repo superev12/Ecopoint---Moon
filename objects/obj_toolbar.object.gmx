@@ -34,6 +34,7 @@ y = 128
 child_buttons[0] = obj_buildselect;
 child_buttons[1] = obj_machineselect;
 child_buttons[2] = obj_storageselect;
+child_buttons[3] = obj_deleteselect;
 
 //Creates all child buttons with locations, stores references in active_children
 for (i = 0; i&lt;array_length_1d(child_buttons); i++)
