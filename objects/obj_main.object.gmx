@@ -150,6 +150,16 @@ for (i = 0; i &lt; 32; i++)
     for (j = 0; j &lt; 32; j++)
     {
         var temp = global.module_grid[# i, j];
+        //Obliterates any modules marked for destruction
+        if (temp[? data_slots.taken] == true)
+        {
+            room_temp = temp[? data_slots.room_object];
+            if (room_temp.turns_alive == -2)
+            {
+                obliterate_room(i, j);
+            }
+        }
+        
         if temp[? data_slots.characters_in_room] &gt; 0 and temp[? data_slots.module] == module_types.farm
         {
             //Submit farm request
@@ -256,6 +266,16 @@ if (mouse_check_button_pressed(mb_left) == true) and (clicked_gui == false)
     {
         build_module(floor(mouse_x/64), floor(mouse_y/64), module_types.food_tank);
         global.tool_selected = tool_list.food_tank;  
+    }
+    else if (global.tool_selected == tool_list.delete)
+    {
+        if (get_space_taken(floor(mouse_x/64), floor(mouse_y/64)))
+        {
+            if (get_space_module(floor(mouse_x/64), floor(mouse_y/64)) == module_types.none)
+            {
+                destroy_room(floor(mouse_x/64), floor(mouse_y/64));
+            }
+        }
     }
     else
     {

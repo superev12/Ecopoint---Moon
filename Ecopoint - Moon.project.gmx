@@ -107,6 +107,7 @@
       <script>scripts\set_space_taken.gml</script>
       <script>scripts\set_space_module.gml</script>
       <script>scripts\destroy_room.gml</script>
+      <script>scripts\obliterate_room.gml</script>
     </scripts>
     <scripts name="Production">
       <script>scripts\submit_production_request.gml</script>
