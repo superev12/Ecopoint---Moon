@@ -357,6 +357,7 @@ clicked_gui = false;
             <kind>1</kind>
             <string>draw_text(0, 0, "Population: " + string(obj_main.population_count));
 draw_text(0, 40, "Turn time: " + string(alarm[0]));
+draw_text(128, 218, string(mouse_x % 64) + ", " + string(mouse_y % 64));
 </string>
           </argument>
         </arguments>
