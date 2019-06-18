@@ -128,64 +128,61 @@ instance_destroy(instance_position(x, y, obj_module_blank_top));
 //Up
 if instance_position(x+32, y-32, obj_module_blank_floor)
 {
-    instance_destroy(instance_position(x+32, y, obj_door_up)); 
+    instance_destroy(instance_position(x+32, y+11, obj_door_up));
     if (instance_position(x+32, y, obj_door_down))
     {
-        instance_destroy(instance_position(x+32, y-1, obj_door_down))
-        instance_create(floor(x/64)*64, (floor(y/64)-1)*64+52, obj_wall_down)
+        instance_destroy(instance_position(x+32, y+5, obj_door_down));
+        instance_create(floor(x/64)*64, (floor(y/64)-1)*64+52, obj_wall_down);
     }
 }
 else
 {
-    instance_destroy(instance_position(x+32, y, obj_wall_up));
+    instance_destroy(instance_position(x+32, y+11, obj_wall_up));
 }
 
 // Down
 if instance_position(x+32, y+96, obj_module_blank_floor)
 {
-    //show_debug_message("Found room down")
-    instance_destroy(instance_position(x+32, y+52, obj_door_down)); 
-    if (instance_position(x+32, y+64, obj_wall_up))
+    instance_destroy(instance_position(x+32, y+64, obj_door_down)); 
+    if (instance_position(x+32, y+66, obj_door_up))
     {
-        instance_destroy(instance_position(x+32, y+64, obj_wall_up))
-        instance_create(floor(x/64)*64, (floor(y/64)+1)*64+52, obj_door_up)
+        instance_destroy(instance_position(x+32, y+66, obj_door_up));
+        instance_create(floor(x/64)*64, (floor(y/64)+1)*64+52, obj_wall_up);
     }
 }
 else
 {
-    instance_destroy(instance_position(x+32, y+67, obj_wall_down)); 
+    instance_destroy(instance_position(x+32, y+64, obj_wall_down)); 
 }
 
 //  Left
 if instance_position(x-32, y+32, obj_module_blank_floor)
 {
-    //show_debug_message("Found room left")
-    instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_door_left); 
-    if (instance_position(x-1, y+24, obj_wall_right))
+    instance_destroy(instance_position(x+2, y+24, obj_door_left));
+    if (instance_position(x-2, y+24, obj_door_right))
     {
-        
-        instance_destroy(instance_position(x-2, y+20, obj_wall_right))
-        instance_create((floor(x/64)-1)*64, floor(y/64)*64+52, obj_door_right)
+        instance_destroy(instance_position(x-2, y+32, obj_door_right));
+        instance_create((floor(x/64)-1)*64, floor(y/64)*64+52, obj_wall_right);
     }
 }
 else
 {
-    instance_destroy(instance_position(x+2, y+32, obj_door_left)); 
+    instance_destroy(instance_position(x+2, y+32, obj_wall_left)); 
 }
 
 //  Right
 if instance_position(x+96, y+32, obj_module_blank_floor)
 {
-    instance_create(floor(x/64)*64, floor(y/64)*64+52, obj_door_right);
-    if (instance_position(x+64, y+24, obj_wall_left))
+    instance_destroy(instance_position(x+61, y+32, obj_door_right));
+    if (instance_position(x+66, y+24, obj_door_left))
     {
-        instance_destroy(instance_position(x+64, y+24, obj_wall_left))
-        instance_create((floor(x/64)+1)*64, floor(y/64)*64+52, obj_door_left)
+        instance_destroy(instance_position(x+66, y+24, obj_door_left));
+        instance_create((floor(x/64)+1)*64, floor(y/64)*64+52, obj_wall_left);
     }
 }
 else
 {
-    instance_destroy(instance_position(x+62, y+31, obj_door_right))
+    instance_destroy(instance_position(x+61, y+32, obj_wall_right));
 }
 </string>
           </argument>
